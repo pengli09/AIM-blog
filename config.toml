@@ -13,6 +13,7 @@ relativeURLs = false
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
+  math = true   # 全站默认开启（单篇可用 front matter 覆盖）
 
 [params.assets]
   favicon = "/favicon.ico"
@@ -25,3 +26,11 @@ relativeURLs = false
 
 [pagination]
   pagerSize = 10
+
+# 让 Hugo 不去改动数学片段（保留 \[ \], $$ $$, \( \)）
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['\[', '\]'], ['$$', '$$']]
+  inline = [['\(', '\)']]
