@@ -1,0 +1,16 @@
+baseURL = "https://pengli09.github.io/AIM-blog/"
+title = "AIM Blog"
+languageCode = "en"
+defaultContentLanguage = "en"
+theme = "PaperMod"
+paginate = 10
+enableRobotsTXT = true
+
+[params]
+  homeInfoParams = { Title = "👋 Welcome", Content = "A multi-author blog powered by Hugo + GitHub Pages" }
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+
+[markup.goldmark.renderer]
+  unsafe = true
