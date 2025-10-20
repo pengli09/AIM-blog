@@ -21,7 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
           fetch-depth: 0
 
       - name: Setup Hugo
@@ -30,12 +29,15 @@ jobs:
           hugo-version: "0.134.2"
           extended: true
 
-      - name: Install theme (PaperMod)
+      # ✅ 直接克隆主题，不改动仓库，不需要提交权限
+      - name: Install PaperMod theme
         run: |
-          git submodule add --force https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod || true
-          git -C themes/PaperMod checkout master || true
+          rm -rf themes/PaperMod
+          git clone --depth 1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
 
       - name: Build
+        env:
+          HUGO_ENV: production
         run: hugo --minify
 
       - name: Upload artifact
