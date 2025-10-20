@@ -26,7 +26,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.153.0"
+          hugo-version: "latest"
           extended: true
 
       # ✅ 直接克隆主题，不改动仓库，不需要提交权限
