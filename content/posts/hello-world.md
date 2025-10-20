@@ -20,3 +20,6 @@ $$
 \[
 \mathbf{A}^\top \mathbf{A} = \mathbf{I}
 \]
+$$
+\sum_{\frac{1}{2}}^{\int_0^1 x^2\,dx = \frac{1}{3}}\left(\int_0^1 x^2\,dx = \frac{1}{3}\right)
+$$
