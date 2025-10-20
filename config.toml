@@ -1,15 +1,24 @@
-baseURL = "https://pengli09.github.io/AIM-blog/"
+baseURL = "https://ai-mathematician.net/"
 title = "AIM Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
 theme = "PaperMod"
 enableRobotsTXT = true
 
+canonifyURLs = true
+relativeURLs = false
+
 [params]
   homeInfoParams = { Title = "👋 Welcome", Content = "A multi-author blog powered by Hugo + GitHub Pages" }
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
+
+[params.assets]
+  favicon = "/favicon.ico"
+  favicon16x16 = "/favicon-16x16.png"
+  favicon32x32 = "/favicon-32x32.png"
+  apple_touch_icon = "/apple-touch-icon.png"
 
 [markup.goldmark.renderer]
   unsafe = true
