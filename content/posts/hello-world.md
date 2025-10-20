@@ -8,8 +8,15 @@ author: "Patrick"
 
 这是我们的第一篇团队博文！支持多人协作：新建分支，提交 PR，合并后自动发布到 GitHub Pages。
 
-这是行内公式\(\sum_{\frac{1}{2}}\)，看看显示是否正常
+行内公式：\( a^2 + b^2 = c^2 \)
+
+块级公式：
+$$
+\int_0^1 x^2\,dx = \frac{1}{3}
+$$
+
+或
 
 \[
-\sum_{\frac{1}{2}}\left(\frac{1}{2}\right)
+\mathbf{A}^\top \mathbf{A} = \mathbf{I}
 \]
