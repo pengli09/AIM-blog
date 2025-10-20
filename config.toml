@@ -3,7 +3,6 @@ title = "AIM Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
 theme = "PaperMod"
-paginate = 10
 enableRobotsTXT = true
 
 [params]
@@ -14,3 +13,6 @@ enableRobotsTXT = true
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[pagination]
+  pagerSize = 10
