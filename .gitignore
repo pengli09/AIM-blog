@@ -1,0 +1,18 @@
+# === Hugo build artifacts ===
+/public/
+/resources/
+/hugo_cache/
+/.hugo_build.lock
+
+# === Hugo vendored modules (optional, ignore by default) ===
+/_vendor/
+
+# === OS / Editor files ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# === Logs / temp ===
+*.log

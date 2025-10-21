@@ -2,18 +2,19 @@ baseURL = "https://ai-mathematician.net/"
 title = "AIM Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
-theme = "PaperMod"
 enableRobotsTXT = true
 
 canonifyURLs = true
 relativeURLs = false
 
 [params]
-  homeInfoParams = { Title = "👋 Welcome", Content = "A multi-author blog powered by Hugo + GitHub Pages" }
+  homeInfoParams = { Title = "👋 Welcome", Content = "Meet <strong>AIM</strong>, the AI Mathematician pioneering a new era of mathematical discovery through intelligent reasoning and innovation." }
   ShowReadingTime = true
-  ShowShareButtons = true
+  ShowShareButtons = false     # 👈 关闭底部分享按钮
   ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
   math = true   # 全站默认开启（单篇可用 front matter 覆盖）
+
 
 [params.assets]
   favicon = "/favicon.ico"
@@ -34,3 +35,7 @@ relativeURLs = false
   [markup.goldmark.extensions.passthrough.delimiters]
     block = [['\[', '\]'], ['$$', '$$']]
     inline = [['\(', '\)']]
+
+[module]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
