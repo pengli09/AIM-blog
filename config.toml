@@ -9,7 +9,7 @@ canonifyURLs = true
 relativeURLs = false
 
 [params]
-  ShowReadingTime = true
+  ShowReadingTime = false
   ShowShareButtons = false     # 👈 关闭底部分享按钮
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
@@ -27,7 +27,7 @@ relativeURLs = false
     languageName = "EN"
     weight = 1
   [languages.zh]
-    languageName = "中"
+    languageName = "中文"
     weight = 2
 
 [languages.en.params.homeInfoParams]
@@ -35,8 +35,8 @@ relativeURLs = false
   Content = "Meet <strong>AIM</strong>, the AI Mathematician pioneering a new era of mathematical discovery through intelligent reasoning and innovation."
 
 [languages.zh.params.homeInfoParams]
-  Title = "👋 欢迎"
-  Content = "认识 <strong>AIM</strong> —— 这位以智能推理与创新开启数学发现新时代的 AI 数学家。"
+  Title = "👋 欢迎来访"
+  Content = "<strong>AIM</strong>：以智能推理与创新思维，探索数学发现的未来。"
 
 [markup.goldmark.renderer]
   unsafe = true

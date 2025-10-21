@@ -8,7 +8,7 @@ categories: ["研究亮点"]
 ShowToc: true
 TocOpen: true
 cover:
-  image: "figures/aim_workflow.png"
+  image: "figures/aim_workflow.zh.png"
   alt: "AI Mathematician 框架总览"
   caption: "AIM 通过探索、验证与改进三部分协同，推动数学推理自动化。"
 ---
@@ -31,7 +31,7 @@ AIM 是一个**基于大语言模型（LLM）的多智能体框架**，旨在尽
 - **探索循环**：支持长链式推理；  
 - **改进循环**：确保过程严谨、结果可靠。
 
-![AIM 工作流程](figures/aim_workflow.png)
+![AIM 工作流程](figures/aim_workflow.zh.png)
 *图 1｜AIM 总体工作流程示意。*
 
 ## ⚙️ 核心技术
@@ -46,7 +46,7 @@ AIM 是一个**基于大语言模型（LLM）的多智能体框架**，旨在尽
 
 我们在**四个科研级数学课题**上评估了 AIM：
 
-![结果总结](figures/results-summary.png)
+![结果总结](figures/results-summary.zh.png)
 *图 2 | 结果总结。*
 
 
