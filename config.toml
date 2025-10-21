@@ -2,25 +2,41 @@ baseURL = "https://ai-mathematician.net/"
 title = "AIM Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 
 canonifyURLs = true
 relativeURLs = false
 
 [params]
-  homeInfoParams = { Title = "👋 Welcome", Content = "Meet <strong>AIM</strong>, the AI Mathematician pioneering a new era of mathematical discovery through intelligent reasoning and innovation." }
   ShowReadingTime = true
   ShowShareButtons = false     # 👈 关闭底部分享按钮
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   math = true   # 全站默认开启（单篇可用 front matter 覆盖）
-
+  displayFullLangName = true
 
 [params.assets]
   favicon = "/favicon.ico"
   favicon16x16 = "/favicon-16x16.png"
   favicon32x32 = "/favicon-32x32.png"
   apple_touch_icon = "/apple-touch-icon.png"
+
+[languages]
+  [languages.en]
+    languageName = "EN"
+    weight = 1
+  [languages.zh]
+    languageName = "中"
+    weight = 2
+
+[languages.en.params.homeInfoParams]
+  Title = "👋 Welcome"
+  Content = "Meet <strong>AIM</strong>, the AI Mathematician pioneering a new era of mathematical discovery through intelligent reasoning and innovation."
+
+[languages.zh.params.homeInfoParams]
+  Title = "👋 欢迎"
+  Content = "认识 <strong>AIM</strong> —— 这位以智能推理与创新开启数学发现新时代的 AI 数学家。"
 
 [markup.goldmark.renderer]
   unsafe = true
