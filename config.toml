@@ -2,7 +2,6 @@ baseURL = "https://ai-mathematician.net/"
 title = "AIM Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
-theme = "PaperMod"
 enableRobotsTXT = true
 
 canonifyURLs = true
@@ -34,3 +33,7 @@ relativeURLs = false
   [markup.goldmark.extensions.passthrough.delimiters]
     block = [['\[', '\]'], ['$$', '$$']]
     inline = [['\(', '\)']]
+
+[module]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
