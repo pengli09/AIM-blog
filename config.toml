@@ -36,7 +36,7 @@ relativeURLs = false
 
 [languages.zh.params.homeInfoParams]
   Title = "👋 欢迎来访"
-  Content = "<strong>AIM</strong>：以智能推理与创新思维，探索数学发现的未来。"
+  Content = "<strong>AI数学家系统AIM</strong>：以智能推理与创新思维，探索数学发现的未来。"
 
 [markup.goldmark.renderer]
   unsafe = true
