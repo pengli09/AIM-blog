@@ -2,3 +2,5 @@
   {{ partial "math.html" . }}
 {{ end }}
 
+{{ $modern := resources.Get "css/modern.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $modern.RelPermalink }}" integrity="{{ $modern.Data.Integrity }}">
