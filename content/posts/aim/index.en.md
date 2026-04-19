@@ -1,6 +1,6 @@
 ---
 title: "AI Mathematician: Towards Fully Automated Frontier Mathematical Research"
-date: 2025-10-21
+date: 2025-06-05
 authors:
 description: "We present AIM, a multi-agent framework powered by large language models, advancing from \"solving problems\" to \"conducting research\"."
 tags: ["AI Mathematician", "AI4Math", "LLM", "Research Automation"]
