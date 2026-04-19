@@ -18,7 +18,7 @@ relativeURLs = false
 
 [params.label]
   text = "Blog"
-  icon = "/logo.png"
+  icon = "/logo20.png"
   iconHeight = 20
 
 [params.assets]
