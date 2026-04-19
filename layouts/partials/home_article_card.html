@@ -1,0 +1,22 @@
+<article class="aim-article-card">
+  {{ with .Params.cover.image }}
+  {{ $cover := . }}
+  {{ with $.Resources.GetMatch $cover }}
+  <a class="aim-article-cover" href="{{ $.RelPermalink }}">
+    <img src="{{ .RelPermalink }}" alt="{{ $.Params.cover.alt | default $.Title }}">
+  </a>
+  {{ else }}
+  <a class="aim-article-cover" href="{{ $.RelPermalink }}">
+    <img src="{{ $cover | relURL }}" alt="{{ $.Params.cover.alt | default $.Title }}">
+  </a>
+  {{ end }}
+  {{ end }}
+  <div class="aim-article-body">
+    <div class="aim-article-meta">
+      <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+      {{ with index .Params.tags 0 }}<span>{{ . }}</span>{{ end }}
+    </div>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description | default (.Summary | plainify | truncate 150) }}</p>
+  </div>
+</article>

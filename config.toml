@@ -8,7 +8,11 @@ enableRobotsTXT = true
 canonifyURLs = true
 relativeURLs = false
 
+[author]
+  name = "The AIM Group"
+
 [params]
+  author = "The AIM Group"
   ShowReadingTime = false
   ShowShareButtons = false     # 👈 关闭底部分享按钮
   ShowPostNavLinks = true
@@ -23,12 +27,30 @@ relativeURLs = false
   apple_touch_icon = "/apple-touch-icon.png"
 
 [languages]
-  [languages.en]
+[languages.en]
     languageName = "EN"
     weight = 1
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "Home"
+        url = "/en/"
+        weight = 1
+      [[languages.en.menu.main]]
+        name = "Posts"
+        url = "/en/posts/"
+        weight = 2
   [languages.zh]
     languageName = "中文"
     weight = 2
+    [languages.zh.menu]
+      [[languages.zh.menu.main]]
+        name = "首页"
+        url = "/zh/"
+        weight = 1
+      [[languages.zh.menu.main]]
+        name = "文章"
+        url = "/zh/posts/"
+        weight = 2
 
 [languages.en.params.homeInfoParams]
   Title = "👋 Welcome"
