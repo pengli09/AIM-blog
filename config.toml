@@ -16,6 +16,11 @@ relativeURLs = false
   math = true   # 全站默认开启（单篇可用 front matter 覆盖）
   displayFullLangName = true
 
+[params.label]
+  text = "Blog"
+  icon = "/logo.png"
+  iconHeight = 20
+
 [params.assets]
   favicon = "/favicon.ico"
   favicon16x16 = "/favicon-16x16.png"
