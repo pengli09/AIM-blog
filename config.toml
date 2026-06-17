@@ -1,6 +1,6 @@
 baseURL = "https://ai-mathematician.net/"
 title = "AIM Blog"
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
@@ -15,6 +15,7 @@ relativeURLs = false
   ShowCodeCopyButtons = true
   math = true   # 全站默认开启（单篇可用 front matter 覆盖）
   displayFullLangName = true
+  mainSections = ["posts"]
 
 [params.label]
   text = "Blog"
@@ -29,11 +30,51 @@ relativeURLs = false
 
 [languages]
   [languages.en]
-    languageName = "EN"
+    label = "EN"
     weight = 1
+    [[languages.en.menu.main]]
+      name = "Team Blog"
+      url = "/team-blog/"
+      weight = 10
+    [[languages.en.menu.main]]
+      name = "Papers & Preprints"
+      url = "/papers/"
+      weight = 20
+    [[languages.en.menu.main]]
+      name = "AIM Math Results"
+      url = "/aim-results/"
+      weight = 30
+    [[languages.en.menu.main]]
+      name = "News"
+      url = "/news/"
+      weight = 40
+    [[languages.en.menu.main]]
+      name = "GitHub"
+      url = "https://github.com/TheoryFoundry"
+      weight = 50
   [languages.zh]
-    languageName = "中文"
+    label = "中文"
     weight = 2
+    [[languages.zh.menu.main]]
+      name = "团队博客"
+      url = "/team-blog/"
+      weight = 10
+    [[languages.zh.menu.main]]
+      name = "论文与预印本"
+      url = "/papers/"
+      weight = 20
+    [[languages.zh.menu.main]]
+      name = "AIM 数学成果"
+      url = "/aim-results/"
+      weight = 30
+    [[languages.zh.menu.main]]
+      name = "新闻"
+      url = "/news/"
+      weight = 40
+    [[languages.zh.menu.main]]
+      name = "GitHub"
+      url = "https://github.com/TheoryFoundry"
+      weight = 50
 
 [languages.en.params.homeInfoParams]
   Title = "👋 Welcome"

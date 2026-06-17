@@ -5,6 +5,7 @@ authors:
 description: "A human–AI collaboration successfully completed a 17-page mathematical proof in homogenization theory."
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Homogenization Theory"]
 categories: ["Research Highlights"]
+aim_sections: ["team-blog", "papers"]
 ShowToc: false
 TocOpen: true
 cover:

@@ -5,6 +5,7 @@ authors:
 description: "我们提出 Pessimistic Verification，用多角度、分层次的错误搜索提升大模型对开放式数学证明的自动验证能力。"
 tags: ["AI4Math", "LLM", "数学验证", "ICML 2026"]
 categories: ["研究亮点"]
+aim_sections: ["team-blog", "papers"]
 ShowToc: false
 TocOpen: true
 cover:

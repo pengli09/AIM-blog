@@ -1,0 +1,36 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $items := index hugo.Data.papers site.Language.Lang | default (slice) }}
+
+<div class="result-list">
+  {{- range $items }}
+  <article class="result-item">
+    <header>
+      <h2>{{ .title }}</h2>
+      <p class="result-meta">{{ delimit .authors ", " }} · {{ .venue }}</p>
+    </header>
+    <div class="result-links" aria-label="{{ cond (eq site.Language.Lang "zh") "访问链接" "Access links" }}">
+      {{- range .links }}
+      <a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .label }}</a>
+      {{- end }}
+    </div>
+    {{- with .summary }}
+    <p class="result-summary">{{ . }}</p>
+    {{- end }}
+  </article>
+  {{- else }}
+  <p class="post-entry">{{ cond (eq site.Language.Lang "zh") "暂无内容。" "No papers yet." }}</p>
+  {{- end }}
+</div>
+
+{{- end }}{{- /* end main */ -}}

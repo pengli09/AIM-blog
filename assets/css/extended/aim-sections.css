@@ -1,0 +1,162 @@
+.latest-news {
+    margin: 0 0 var(--gap);
+    padding: var(--gap);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+}
+
+.home-info.first-entry {
+    min-height: auto;
+    margin-bottom: var(--gap);
+    padding: 72px 0 36px;
+}
+
+.latest-news__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.latest-news__header h2 {
+    font-size: 22px;
+    line-height: 1.25;
+}
+
+.latest-news__header a,
+.result-links a {
+    color: var(--secondary);
+    font-size: 14px;
+    text-underline-offset: 0.25rem;
+    text-decoration: underline;
+}
+
+.latest-news__list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding-inline-start: 20px;
+}
+
+.latest-news__list li {
+    padding-inline-start: 4px;
+}
+
+.latest-news__list a {
+    font-size: 16px;
+}
+
+.latest-news__list time {
+    display: block;
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+.latest-news__empty {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.result-list {
+    display: grid;
+    gap: var(--gap);
+}
+
+.result-item {
+    padding: var(--gap);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+}
+
+.result-item h2 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.result-meta {
+    margin-top: 6px;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.result-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.result-links a {
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--code-bg);
+    text-decoration: none;
+}
+
+.result-notice {
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--secondary);
+    background: var(--code-bg);
+    font-size: 13px;
+}
+
+.result-summary {
+    color: var(--content);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.result-summaries {
+    display: grid;
+    gap: 14px;
+}
+
+.result-summaries h3 {
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.menu a[href*="github.com/TheoryFoundry"] span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    color: var(--theme);
+    background: var(--primary);
+}
+
+@media (max-width: 520px) {
+    .menu {
+        flex-wrap: wrap;
+        row-gap: 10px;
+        white-space: normal;
+    }
+
+    .menu li+li {
+        margin-inline-start: 16px;
+    }
+
+    .home-info.first-entry {
+        padding: 46px 0 24px;
+    }
+
+    .latest-news__header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .result-item h2 {
+        font-size: 21px;
+    }
+}

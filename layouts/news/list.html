@@ -1,0 +1,28 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $pages := .RegularPages }}
+{{- if $pages }}
+<ol class="latest-news__list">
+  {{- range $pages }}
+    {{- $href := .Permalink }}
+    {{- with .Params.news_target }}
+      {{- $href = . | absLangURL }}
+    {{- end }}
+    <li><a href="{{ $href }}">{{ .Title }}</a></li>
+  {{- end }}
+</ol>
+{{- else }}
+<p class="latest-news__empty">{{ cond (eq site.Language.Lang "zh") "暂无新闻。" "No news yet." }}</p>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

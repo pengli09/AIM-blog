@@ -5,6 +5,7 @@ authors:
 description: "人机协作成功完成一项均匀化理论研究的约17页数学证明。"
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Homogenization Theory"]
 categories: ["研究亮点"]
+aim_sections: ["team-blog", "papers"]
 ShowToc: false
 TocOpen: true
 cover:
@@ -70,4 +71,3 @@ AI在数学研究中的比较优势体现在基于现有理论的分析、搜索
 - **基于交互反馈优化AIM系统：** 团队的长期研究目标是实现数学定理证明的自动化，因此 AIM 系统架构的迭代优化既关键又具内在挑战性。通过人机协同的定理证明实验，团队已明确智能体擅长的任务类型与存在困难的任务类型。这些积累的见解为系统设计的后续迭代提供了依据。团队将以这些不足为出发点，尝试提出训练方法以提升模型的推理能力，进而改善实验表现，从而增强大型语言模型在数学理论研究领域的能力。
 
 📄 **阅读原论文：** [arXiv 2510.26380](https://arxiv.org/abs/2510.26380)
-
