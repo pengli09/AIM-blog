@@ -5,7 +5,7 @@ authors:
 description: "We present AIM, a multi-agent framework powered by large language models, advancing from \"solving problems\" to \"conducting research\"."
 tags: ["AI Mathematician", "AI4Math", "LLM", "Research Automation"]
 categories: ["Research Highlights"]
-aim_section: "team-blog"
+aim_sections: ["team-blog", "papers"]
 ShowToc: false
 TocOpen: true
 cover:

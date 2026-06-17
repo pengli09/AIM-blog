@@ -1,0 +1,27 @@
+- title: "Sign Embedding Quantum Algorithms for Matrix Equations and Matrix Functions"
+  authors:
+    - "Yanqiao Wang"
+    - "Jin-Peng Liu"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2604.25333"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2604.25333"
+  summary: "This work develops a sign-embedding framework for operator-output quantum algorithms targeting matrix equations and matrix functions. It uses augmented matrices, half-plane matrix signs, logarithmic-sinc approximations, and rebalanced shifted inverse families to treat Sylvester-type equations, Lyapunov equations, matrix square roots, matrix geometric means, and Riccati equations under structured quantum linear algebra settings."
+
+- title: "AI Mathematician as a Partner in Advancing Mathematical Discovery -- A Case Study in Homogenization Theory"
+  authors:
+    - "Yuanhang Liu"
+    - "Beichen Wang"
+    - "Peng Li"
+    - "Yang Liu"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2510.26380"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2510.26380"
+    - label: "Blog"
+      url: "/en/posts/homogenization.theory/"
+  summary: "This case study examines AIM as a research partner in homogenization theory. It describes how autonomous AI reasoning and targeted human interventions decompose a difficult proof task into subgoals, select analytical tools, validate intermediate claims, and assemble a complete proof while preserving human oversight for rigor."

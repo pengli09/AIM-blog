@@ -1,0 +1,23 @@
+{{- $news := where site.RegularPages "Type" "news" }}
+{{- $news = first 5 $news }}
+{{- $title := cond (eq site.Language.Lang "zh") "新闻" "News" }}
+{{- $empty := cond (eq site.Language.Lang "zh") "暂无新闻。" "No news yet." }}
+{{- $more := cond (eq site.Language.Lang "zh") "查看全部新闻" "View all news" }}
+<section class="latest-news" aria-labelledby="latest-news-title">
+  <div class="latest-news__header">
+    <h2 id="latest-news-title">{{ $title }}</h2>
+    <a href="{{ "news/" | absLangURL }}">{{ $more }}</a>
+  </div>
+  {{- if $news }}
+  <ol class="latest-news__list">
+    {{- range $news }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+    </li>
+    {{- end }}
+  </ol>
+  {{- else }}
+  <p class="latest-news__empty">{{ $empty }}</p>
+  {{- end }}
+</section>

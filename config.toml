@@ -43,6 +43,10 @@ relativeURLs = false
       name = "AIM Math Results"
       url = "/aim-results/"
       weight = 30
+    [[languages.en.menu.main]]
+      name = "News"
+      url = "/news/"
+      weight = 40
   [languages.zh]
     languageName = "中文"
     weight = 2
@@ -58,6 +62,10 @@ relativeURLs = false
       name = "AIM 数学成果"
       url = "/aim-results/"
       weight = 30
+    [[languages.zh.menu.main]]
+      name = "新闻"
+      url = "/news/"
+      weight = 40
 
 [languages.en.params.homeInfoParams]
   Title = "👋 Welcome"
