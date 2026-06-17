@@ -15,6 +15,7 @@ relativeURLs = false
   ShowCodeCopyButtons = true
   math = true   # 全站默认开启（单篇可用 front matter 覆盖）
   displayFullLangName = true
+  mainSections = ["posts"]
 
 [params.label]
   text = "Blog"
@@ -49,7 +50,7 @@ relativeURLs = false
       weight = 40
     [[languages.en.menu.main]]
       name = "GitHub"
-      url = "https://github.com/pengli09/AIM-blog"
+      url = "https://github.com/TheoryFoundry"
       weight = 50
   [languages.zh]
     languageName = "中文"
@@ -72,7 +73,7 @@ relativeURLs = false
       weight = 40
     [[languages.zh.menu.main]]
       name = "GitHub"
-      url = "https://github.com/pengli09/AIM-blog"
+      url = "https://github.com/TheoryFoundry"
       weight = 50
 
 [languages.en.params.homeInfoParams]
