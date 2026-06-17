@@ -1,0 +1,6 @@
+interface:
+  display_name: "Update AIM Blog Content"
+  short_description: "Maintain AIM Blog posts, news, papers, and results"
+  default_prompt: "Use $update-aim-blog-content to add or revise AIM Blog content and validate the Hugo build."
+policy:
+  allow_implicit_invocation: true
