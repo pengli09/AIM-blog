@@ -8,7 +8,8 @@
       url: "https://arxiv.org/abs/2604.25333"
     - label: "DOI"
       url: "https://doi.org/10.48550/arXiv.2604.25333"
-  summary: "该工作提出面向矩阵方程和矩阵函数的符号嵌入量子算法框架。方法围绕增广矩阵、半平面矩阵符号、logarithmic-sinc 近似以及移位逆族的重平衡展开，用统一思路处理 Sylvester 方程、Lyapunov 方程、矩阵平方根、矩阵几何平均和 Riccati 方程等结构化量子线性代数任务。"
+  summary_expert: "该工作提出面向矩阵方程和矩阵函数的符号嵌入量子算法框架。方法围绕增广矩阵、半平面矩阵符号、logarithmic-sinc 近似以及移位逆族的重平衡展开，用统一思路处理 Sylvester 方程、Lyapunov 方程、矩阵平方根、矩阵几何平均和 Riccati 方程等问题。"
+  summary_public: "这项工作研究如何用量子算法处理科学计算和应用数学中常见的复杂矩阵问题。其核心贡献是提出一个较通用的框架，使多类矩阵计算任务有可能被更系统地转化为量子算法。"
 
 - title: "AI Mathematician as a Partner in Advancing Mathematical Discovery -- A Case Study in Homogenization Theory"
   authors:
@@ -24,4 +25,5 @@
       url: "https://doi.org/10.48550/arXiv.2510.26380"
     - label: "博客"
       url: "/zh/posts/homogenization.theory/"
-  summary: "该案例研究展示 AIM 如何作为均匀化理论研究中的协作伙伴参与数学发现过程。工作通过 AI 自主推理与人工定向干预，将复杂证明任务拆解为子目标，选择合适分析工具，验证中间结论，并在保留人工严谨性把关的前提下形成完整证明。"
+  summary_expert: "该案例研究讨论 AIM 辅助均匀化理论证明开发的过程。工作将 AI 自主推理轨迹与人工定向干预结合起来，用于拆解证明目标、选择分析工具、验证中间结论，并在人工监督下组织成完整论证。"
+  summary_public: "这项案例研究展示 AIM 如何辅助数学家完成一项较长、较技术性的证明。AIM 参与提出思路和组织推理，人类研究者负责引导、检查和修正，从而保证证明的严谨性。"

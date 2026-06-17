@@ -47,6 +47,10 @@ relativeURLs = false
       name = "News"
       url = "/news/"
       weight = 40
+    [[languages.en.menu.main]]
+      name = "GitHub"
+      url = "https://github.com/pengli09/AIM-blog"
+      weight = 50
   [languages.zh]
     languageName = "中文"
     weight = 2
@@ -66,6 +70,10 @@ relativeURLs = false
       name = "新闻"
       url = "/news/"
       weight = 40
+    [[languages.zh.menu.main]]
+      name = "GitHub"
+      url = "https://github.com/pengli09/AIM-blog"
+      weight = 50
 
 [languages.en.params.homeInfoParams]
   Title = "👋 Welcome"
