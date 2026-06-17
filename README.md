@@ -1,44 +1,158 @@
 # AIM Blog Content Guide
 
-This repository contains the Hugo source for the AIM Blog. It supports bilingual content, section navigation, team blog posts, news, papers and preprints, and AIM-related mathematical results.
+This repository contains the Hugo source for the AIM Blog. The recommended workflow is to use Codex for routine content updates, because the site has several bilingual, data-driven sections whose formats need to stay aligned.
 
 中文说明见下方：[中文指南](#中文指南)。
 
-## Codex Skill
+## Recommended Workflow: Use Codex
 
-This repository includes a Codex skill for routine site updates:
+This repository includes a project skill for site updates:
 
 ```text
 skills/update-aim-blog-content/
 ```
 
-When asking Codex to add or revise site content, start with:
+When asking Codex to add or revise content, start with:
 
 ```text
 Use $update-aim-blog-content to ...
 ```
 
-Examples:
+The skill tells Codex how this repository is structured, how each section stores content, and what validation commands to run before handing changes back.
 
-```text
-Use $update-aim-blog-content to add a bilingual team blog post for our new paper.
-Use $update-aim-blog-content to add a paper entry and a related news item.
-Use $update-aim-blog-content to update an AIM math result with new arXiv and code links.
-```
+## What to Prepare Before Asking Codex
 
-The skill documents the current content model and reminds Codex to update both languages, preserve section conventions, and run Hugo validation.
-
-Before using the skill, prepare the information Codex will need:
+Prepare the content facts first. The more precise the input, the less cleanup is needed.
 
 - Target section: team blog, news, papers and preprints, AIM math results, navigation, or section page text.
 - Language scope: English only, Chinese only, or bilingual.
-- For a team blog post: title, date, slug, authors if any, short description, target sections for `aim_sections`, draft/body text, images or PDFs, and any related paper/code links.
+- For a team blog post: title, date, slug, authors if any, short description, target sections for `aim_sections`, draft/body text, images or PDFs, and related paper/code links.
 - For news: date, one-sentence title, target language, and the related blog URL if the news should jump to a blog post.
-- For papers and preprints: title, authors, venue, publication/preprint status, source links such as arXiv/DOI/PDF/code/blog, and a short summary.
+- For papers and preprints: title, authors, venue, publication/preprint status, links such as arXiv/DOI/PDF/code/blog, and a short summary.
 - For AIM math results: title, authors, venue or platform, source links, whether our team participated, how AIM or related AI systems contributed, and both expert-facing and public-facing summary requirements.
-- Any wording constraints, for example terms to avoid, preferred Chinese/English names, or whether AI-generated summaries need special disclaimers.
+- Wording constraints: terms to avoid, preferred Chinese/English names, fixed translations, and whether AI-generated summaries need special disclaimers.
 
-## Quick Start
+## Complete Example: Add a New Paper, Blog, and News Item
+
+This example shows the intended end-to-end workflow: prepare content, ask Codex to update the site, review locally, open a PR, and merge.
+
+### 1. Prepare the Content Package
+
+Create a short brief for Codex. For example:
+
+```text
+Target: add a bilingual team blog post, add the paper to Papers & Preprints, and add one news item.
+
+Paper:
+- Title: Pessimistic Verification for Open Ended Math Questions
+- Date: 2026-05-17
+- Authors: Yanxing Huang, Zihan Tang, Zejin Lin, Peng Li, Yang Liu
+- Venue: ICML 2026 / arXiv preprint
+- arXiv: https://arxiv.org/abs/2511.21522
+- Code: https://github.com/THUNLP-MT/pverify
+
+Blog:
+- Slug: pessimistic-verification
+- English title: Pessimistic Verification: Helping LLMs Check Mathematical Proofs
+- Chinese title: 悲观验证：让大模型更会检查数学证明
+- Sections: team-blog, papers
+- Use the attached English and Chinese drafts.
+- Use figures/pessimistic_verifiers.svg as the cover.
+
+News:
+- English title: 2026-05-17: Pessimistic Verification introduced for mathematical proof checking
+- Chinese title: 2026-05-17：团队提出悲观验证方法，提升大模型数学证明检查能力
+- News should link to the blog post, not to a standalone news page.
+
+Constraints:
+- Keep dates only in news titles, not as extra displayed dates in the news list.
+- Keep bilingual pages aligned.
+- Run Hugo build validation before finishing.
+```
+
+Put any draft Markdown, figures, PDFs, or screenshots in the repository or attach them in the Codex session before asking for the update.
+
+### 2. Ask Codex to Make the Change
+
+Use a prompt like:
+
+```text
+Use $update-aim-blog-content to add the prepared bilingual blog post, paper-list entry, and news item. Please update all affected English and Chinese files, keep the existing section conventions, run validation, and summarize the changed files.
+```
+
+Codex should inspect the repository, update the relevant files, and run:
+
+```bash
+hugo --gc --minify
+git diff --check
+```
+
+For link or text changes, ask Codex to inspect generated HTML with targeted `rg` checks.
+
+### 3. Review Locally
+
+Start a local preview:
+
+```bash
+hugo server -D --ignoreCache --disableFastRender
+```
+
+Open:
+
+```text
+http://localhost:1313/
+```
+
+Check the affected pages, usually:
+
+- `/en/` and `/zh/`
+- `/en/team-blog/` and `/zh/team-blog/`
+- `/en/papers/` and `/zh/papers/`
+- `/en/news/` and `/zh/news/`
+- the new post pages under `/en/posts/<slug>/` and `/zh/posts/<slug>/`
+
+If something looks wrong, ask Codex for a targeted fix instead of editing unrelated files manually.
+
+### 4. Commit and Push
+
+Review the diff:
+
+```bash
+git status
+git diff
+```
+
+Commit:
+
+```bash
+git add README.md content data layouts assets static skills
+git commit -m "Add pessimistic verification content"
+git push origin <your-branch>
+```
+
+Only add the files that actually changed. The command above lists common directories; narrow it if the change is smaller.
+
+### 5. Open a Pull Request
+
+Open a PR against `main`. In the PR description, include:
+
+- What content was added or changed.
+- Which pages were checked locally.
+- The validation result, for example `hugo --gc --minify` passed.
+- Any known follow-up items.
+
+### 6. Merge and Confirm Publication
+
+After review, merge the PR into `main`. GitHub Actions will build and publish the site automatically.
+
+After the deployment finishes, open the production pages and confirm:
+
+- The new content appears in the expected language versions.
+- Links point to the intended pages.
+- Images and math render correctly.
+- News, papers, and AIM math results appear in the correct sections.
+
+## Local Setup for Previewing Codex Changes
 
 Install Hugo Extended:
 
@@ -63,12 +177,6 @@ Run a local preview:
 hugo server -D --ignoreCache --disableFastRender
 ```
 
-Open:
-
-```text
-http://localhost:1313/
-```
-
 Build the production site locally:
 
 ```bash
@@ -88,9 +196,14 @@ data/aim_results/       AIM math result list data
 layouts/                Hugo templates and local PaperMod overrides
 assets/css/extended/    Custom styles
 static/                 Static site assets
+skills/                 Project Codex skills
 ```
 
-## Adding or Editing Team Blog Posts
+## Manual Content Updates
+
+Use this section when you need to update content without Codex, or when reviewing Codex's output.
+
+### Team Blog Posts
 
 Team blog posts live in page bundles under `content/posts/`:
 
@@ -127,11 +240,6 @@ cover:
 
 Important fields:
 
-- `title`: page title.
-- `date`: publication date in `YYYY-MM-DD`.
-- `description`: short card and metadata summary.
-- `tags`: topic tags.
-- `categories`: broad category labels.
 - `aim_sections`: controls section membership. A post can belong to multiple sections, for example `["team-blog", "papers"]`.
 - `cover.image`: image path relative to the post bundle.
 - `hiddenInSingle: true`: hides the cover inside the full post while keeping it available for cards.
@@ -145,7 +253,7 @@ Writing tips:
 - Use display math as `\[ ... \]`.
 - If an SVG looks wrong in dark mode, add an explicit white background to the SVG.
 
-## Adding or Editing News
+### News
 
 News files live under `content/news/`:
 
@@ -175,7 +283,7 @@ Rules:
 - If `news_target` is omitted, the news item links to its own news page.
 - Add both `.en.md` and `.zh.md` when updating bilingual news.
 
-## Adding or Editing Papers and Preprints
+### Papers and Preprints
 
 The Papers & Preprints section is data-driven:
 
@@ -184,9 +292,7 @@ data/papers/en.yaml
 data/papers/zh.yaml
 ```
 
-Add one entry to each file.
-
-Example:
+Add one entry to each file:
 
 ```yaml
 - title: "Paper title"
@@ -211,9 +317,9 @@ Rules:
 - Use language-specific internal links: `/en/posts/.../` in `en.yaml`, `/zh/posts/.../` in `zh.yaml`.
 - Keep the order intentional, usually newest or most important first.
 
-## Adding or Editing AIM Math Results
+### AIM Math Results
 
-The AIM Math Results section is also data-driven:
+The AIM Math Results section is data-driven:
 
 ```text
 data/aim_results/en.yaml
@@ -245,7 +351,7 @@ Rules:
 - Summaries are usually AI-generated; keep the visible AI-generated-summary disclaimer in the layout unless intentionally changed.
 - Add all useful source links.
 
-## Editing Section Pages and Navigation
+### Section Pages and Navigation
 
 Section landing pages:
 
@@ -272,7 +378,7 @@ Use Hugo's current config keys:
 - `locale`, not `languageCode`
 - `languages.<lang>.label`, not `languages.<lang>.languageName`
 
-## Validation Before PRs
+### Manual Validation
 
 Run:
 
@@ -294,19 +400,15 @@ If you changed SVGs:
 xmllint --noout path/to/file.svg
 ```
 
-## Publishing
-
-Open a pull request after local validation. Merging to `main` publishes the site through GitHub Actions.
-
 ---
 
 # 中文指南
 
-本仓库是 AIM Blog 的 Hugo 源码，支持中英文双语内容、导航栏目、团队博客、新闻、论文与预印本列表，以及 AIM 相关数学成果列表。
+本仓库是 AIM Blog 的 Hugo 源码。推荐使用 Codex 完成日常内容更新，因为本站包含多个双语栏目和 YAML 数据列表，手工维护时容易遗漏中英文同步、链接和构建验证。
 
-## Codex Skill
+## 推荐流程：使用 Codex
 
-本仓库内置了一个用于更新网站内容的 Codex skill：
+本仓库内置了一个用于更新网站内容的项目 skill：
 
 ```text
 skills/update-aim-blog-content/
@@ -318,17 +420,11 @@ skills/update-aim-blog-content/
 Use $update-aim-blog-content to ...
 ```
 
-示例：
+这个 skill 记录了当前网站的结构、各栏目的内容格式，以及修改完成后应该运行的验证命令。
 
-```text
-Use $update-aim-blog-content to add a bilingual team blog post for our new paper.
-Use $update-aim-blog-content to add a paper entry and a related news item.
-Use $update-aim-blog-content to update an AIM math result with new arXiv and code links.
-```
+## 使用 Codex 前需要准备什么
 
-这个 skill 记录了当前网站的内容结构，会提醒 Codex 同步更新中英文、遵守各栏目格式，并在修改后运行 Hugo 构建验证。
-
-使用 skill 前，建议先准备好 Codex 需要的信息：
+先把内容事实整理清楚。输入越明确，后续返工越少。
 
 - 目标栏目：团队博客、新闻、论文与预印本、AIM 数学成果、导航栏，或栏目页文案。
 - 语言范围：只更新英文、只更新中文，还是中英文双语都更新。
@@ -336,9 +432,129 @@ Use $update-aim-blog-content to update an AIM math result with new arXiv and cod
 - 新闻：日期、一句话标题、目标语言，以及如果需要跳转到博客时对应的博客链接。
 - 论文与预印本：标题、作者、发表会议/期刊/预印平台、发表或预印状态、arXiv/DOI/PDF/代码/博客等链接，以及简短摘要。
 - AIM 数学成果：标题、作者、发表会议/期刊/预印平台、来源链接、我们团队是否参与、AIM 或相关 AI 系统在其中起到的作用，以及面向领域专家和面向大众的摘要要求。
-- 任何措辞约束，例如需要避免的说法、固定中英文译名，或 AI 生成摘要是否需要特殊提示。
+- 措辞约束：需要避免的说法、固定中英文译名、是否需要 AI 生成摘要免责声明等。
 
-## 快速开始
+## 完整示例：新增论文、博客和新闻
+
+这个示例展示完整流程：准备内容、让 Codex 修改、在本地检查、提交 PR、合并上线。
+
+### 1. 准备内容包
+
+先准备一段清晰的说明。例如：
+
+```text
+目标：新增一篇中英文团队博客，把论文加入“论文与预印本”，并新增一条新闻。
+
+论文：
+- 标题：Pessimistic Verification for Open Ended Math Questions
+- 日期：2026-05-17
+- 作者：Yanxing Huang, Zihan Tang, Zejin Lin, Peng Li, Yang Liu
+- 发表信息：ICML 2026 / arXiv preprint
+- arXiv：https://arxiv.org/abs/2511.21522
+- 代码：https://github.com/THUNLP-MT/pverify
+
+博客：
+- Slug：pessimistic-verification
+- 英文标题：Pessimistic Verification: Helping LLMs Check Mathematical Proofs
+- 中文标题：悲观验证：让大模型更会检查数学证明
+- 所属栏目：team-blog, papers
+- 使用我提供的中英文草稿。
+- 使用 figures/pessimistic_verifiers.svg 作为封面。
+
+新闻：
+- 英文标题：2026-05-17: Pessimistic Verification introduced for mathematical proof checking
+- 中文标题：2026-05-17：团队提出悲观验证方法，提升大模型数学证明检查能力
+- 新闻点击后跳转到对应博客，不跳转到独立新闻页。
+
+约束：
+- 新闻列表里日期只出现在标题中，不额外显示系统日期。
+- 中英文页面保持对齐。
+- 修改完成后运行 Hugo 构建验证。
+```
+
+如果有 Markdown 草稿、图片、PDF 或截图，把它们放进仓库或在 Codex 会话里提供。
+
+### 2. 让 Codex 修改
+
+可以这样提需求：
+
+```text
+Use $update-aim-blog-content to add the prepared bilingual blog post, paper-list entry, and news item. Please update all affected English and Chinese files, keep the existing section conventions, run validation, and summarize the changed files.
+```
+
+Codex 应该会读取仓库结构，修改相关文件，并运行：
+
+```bash
+hugo --gc --minify
+git diff --check
+```
+
+如果涉及链接或页面文字，可以要求 Codex 用 `rg` 检查生成后的 `public/` HTML。
+
+### 3. 本地预览和检查
+
+启动本地预览：
+
+```bash
+hugo server -D --ignoreCache --disableFastRender
+```
+
+浏览器打开：
+
+```text
+http://localhost:1313/
+```
+
+通常需要检查：
+
+- `/en/` 和 `/zh/`
+- `/en/team-blog/` 和 `/zh/team-blog/`
+- `/en/papers/` 和 `/zh/papers/`
+- `/en/news/` 和 `/zh/news/`
+- 新博客 `/en/posts/<slug>/` 和 `/zh/posts/<slug>/`
+
+如果发现问题，优先让 Codex 做针对性修复，避免手工顺带改动无关文件。
+
+### 4. 提交并推送
+
+检查改动：
+
+```bash
+git status
+git diff
+```
+
+提交：
+
+```bash
+git add README.md content data layouts assets static skills
+git commit -m "Add pessimistic verification content"
+git push origin <your-branch>
+```
+
+只添加实际改动过的文件。上面的 `git add` 覆盖常见目录；如果改动较小，可以缩小范围。
+
+### 5. 提 Pull Request
+
+向 `main` 分支提交 PR。PR 描述建议包含：
+
+- 新增或修改了哪些内容。
+- 本地检查了哪些页面。
+- 验证结果，例如 `hugo --gc --minify` 已通过。
+- 已知后续事项。
+
+### 6. 合并并确认上线
+
+review 通过后合并到 `main`。GitHub Actions 会自动构建并发布网站。
+
+部署完成后，打开线上页面确认：
+
+- 新内容出现在预期的中英文页面。
+- 链接指向正确页面。
+- 图片和公式正常显示。
+- 新闻、论文、AIM 数学成果出现在正确栏目。
+
+## 本地预览环境
 
 安装 Hugo Extended：
 
@@ -363,12 +579,6 @@ hugo mod vendor
 hugo server -D --ignoreCache --disableFastRender
 ```
 
-浏览器打开：
-
-```text
-http://localhost:1313/
-```
-
 本地构建：
 
 ```bash
@@ -388,9 +598,14 @@ data/aim_results/       AIM 数学成果列表数据
 layouts/                Hugo 模板和本地 PaperMod 覆盖
 assets/css/extended/    自定义样式
 static/                 静态资源
+skills/                 项目 Codex skills
 ```
 
-## 新增或修改团队博客
+## 手工更新内容
+
+如果无法使用 Codex，或需要 review Codex 的输出，可以参考本节。
+
+### 团队博客
 
 团队博客使用 page bundle，放在 `content/posts/` 下：
 
@@ -427,11 +642,6 @@ cover:
 
 常用字段：
 
-- `title`：文章标题。
-- `date`：发布日期，格式为 `YYYY-MM-DD`。
-- `description`：卡片和页面元信息中的简短摘要。
-- `tags`：标签。
-- `categories`：大类。
 - `aim_sections`：控制文章属于哪些栏目。同一篇文章可以属于多个栏目，例如 `["team-blog", "papers"]`。
 - `cover.image`：封面图，相对于当前文章 bundle。
 - `hiddenInSingle: true`：封面用于列表卡片，但不在文章页顶部重复显示。
@@ -445,7 +655,7 @@ cover:
 - 展示公式使用 `\[ ... \]`。
 - 如果 SVG 在深色模式下背景透明导致不清楚，请给 SVG 增加明确的白色背景。
 
-## 新增或修改新闻
+### 新闻
 
 新闻文件放在 `content/news/`：
 
@@ -475,7 +685,7 @@ The team introduced Pessimistic Verification for open-ended mathematical proof c
 - 不填 `news_target` 时，新闻会链接到自身页面。
 - 双语更新时同时添加 `.en.md` 和 `.zh.md`。
 
-## 新增或修改论文与预印本
+### 论文与预印本
 
 “论文与预印本”栏目由 YAML 数据驱动：
 
@@ -484,9 +694,7 @@ data/papers/en.yaml
 data/papers/zh.yaml
 ```
 
-新增论文时，在两个文件中各加一条。
-
-示例：
+新增论文时，在两个文件中各加一条：
 
 ```yaml
 - title: "Paper title"
@@ -511,7 +719,7 @@ data/papers/zh.yaml
 - 内部博客链接应使用对应语言：英文数据里用 `/en/posts/.../`，中文数据里用 `/zh/posts/.../`。
 - 条目顺序应有明确规则，通常按时间或重要性排序。
 
-## 新增或修改 AIM 数学成果
+### AIM 数学成果
 
 “AIM 数学成果”栏目也由 YAML 数据驱动：
 
@@ -545,7 +753,7 @@ data/aim_results/zh.yaml
 - 这些摘要通常为 AI 生成；除非明确要求修改布局，否则保留页面上的 AI-generated-summary 提示。
 - 尽量补全来源链接，例如 arXiv、DOI、官网、代码、新闻报道等。
 
-## 修改栏目页和导航栏
+### 栏目页和导航栏
 
 栏目页位置：
 
@@ -572,7 +780,7 @@ Hugo 新版本字段：
 - 使用 `locale`，不要使用 `languageCode`
 - 使用 `languages.<lang>.label`，不要使用 `languages.<lang>.languageName`
 
-## 提交 PR 前验证
+### 手工验证
 
 运行：
 
@@ -593,7 +801,3 @@ rg -n "languageCode|languageName|LanguageName|LanguageCode|LanguageDirection" co
 ```bash
 xmllint --noout path/to/file.svg
 ```
-
-## 发布
-
-本地验证通过后提交 PR。合并到 `main` 后，GitHub Actions 会自动构建并发布网站。
