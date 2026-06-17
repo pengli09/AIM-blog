@@ -11,9 +11,12 @@
   {{- if $news }}
   <ol class="latest-news__list">
     {{- range $news }}
+    {{- $href := .Permalink }}
+    {{- with .Params.news_target }}
+      {{- $href = . | absLangURL }}
+    {{- end }}
     <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+      <a href="{{ $href }}">{{ .Title }}</a>
     </li>
     {{- end }}
   </ol>

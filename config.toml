@@ -1,6 +1,6 @@
 baseURL = "https://ai-mathematician.net/"
 title = "AIM Blog"
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
@@ -30,7 +30,7 @@ relativeURLs = false
 
 [languages]
   [languages.en]
-    languageName = "EN"
+    label = "EN"
     weight = 1
     [[languages.en.menu.main]]
       name = "Team Blog"
@@ -53,7 +53,7 @@ relativeURLs = false
       url = "https://github.com/TheoryFoundry"
       weight = 50
   [languages.zh]
-    languageName = "中文"
+    label = "中文"
     weight = 2
     [[languages.zh.menu.main]]
       name = "团队博客"

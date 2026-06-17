@@ -1,7 +1,8 @@
 ---
-title: "2026-05-17: Pessimistic Verification blog post published"
+title: "2026-05-17: Pessimistic Verification introduced for mathematical proof checking"
 date: 2026-05-17
-description: "2026-05-17: The team published a blog post explaining pessimistic verification for open-ended mathematical proof checking."
+description: "The team introduced Pessimistic Verification for open-ended mathematical proof checking."
+news_target: "/posts/pessimistic-verification/"
 ---
 
-2026-05-17: The team published a blog post explaining pessimistic verification for open-ended mathematical proof checking.
+The team introduced Pessimistic Verification for open-ended mathematical proof checking.
