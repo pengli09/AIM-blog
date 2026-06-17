@@ -5,6 +5,7 @@ authors:
 description: "We present Pessimistic Verification, a simple and efficient way to improve LLM-based verification for open-ended mathematical proofs."
 tags: ["AI4Math", "LLM", "Math Verification", "ICML 2026"]
 categories: ["Research Highlights"]
+aim_sections: ["team-blog", "papers"]
 ShowToc: false
 TocOpen: true
 cover:
