@@ -88,5 +88,3 @@ This case shows that the value of AI in frontier theoretical research is extendi
 📄 **Read the quantum algorithms paper:** [arXiv 2604.25333](https://arxiv.org/abs/2604.25333)
 
 💻 **AIM repository:** [TheoryFoundry/AIMv2](https://github.com/TheoryFoundry/AIMv2)
-
-🌐 **AIM Blog:** [ai-mathematician.net](https://ai-mathematician.net)

@@ -88,5 +88,3 @@ cover:
 📄 **阅读量子算法论文：** [arXiv 2604.25333](https://arxiv.org/abs/2604.25333)
 
 💻 **AIM 代码仓库：** [TheoryFoundry/AIMv2](https://github.com/TheoryFoundry/AIMv2)
-
-🌐 **AIM Blog：** [ai-mathematician.net](https://ai-mathematician.net)
