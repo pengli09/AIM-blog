@@ -83,7 +83,7 @@ cover:
 
 这一案例表明，AI 在前沿理论研究中的价值，正在从局部任务辅助逐步延伸到更完整的研究流程之中。AIM 将路线拓展、关联发现、证明草拟和审计反馈等能力组织起来，使 AI 的生成与推导能力能够更好地服务于人类研究者的方向判断和数学把关。这样的协同方式，为提高理论研究效率、拓展研究视野提供了新的可能。
 
-📄 **阅读 AIM 系统应用报告：** [From Meta Idea to Advanced Mathematical Discovery: Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms](human_AI_interactive_technical_report-13.pdf)
+📄 **阅读 AIM 系统应用报告：** [From Meta Idea to Advanced Mathematical Discovery: Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms](https://arxiv.org/abs/2606.24899)
 
 📄 **阅读量子算法论文：** [arXiv 2604.25333](https://arxiv.org/abs/2604.25333)
 
