@@ -83,7 +83,7 @@ This also offers guidance for the future development of AIM. What deserves furth
 
 This case shows that the value of AI in frontier theoretical research is extending from local task assistance toward fuller research workflows. By organizing route expansion, connection discovery, proof drafting, and audit feedback, AIM helps align AI's generative and derivational abilities with human direction-setting and mathematical judgment. This collaborative mode opens new possibilities for improving theoretical research efficiency and expanding the researcher's field of view.
 
-📄 **Read the AIM application report:** [From Meta Idea to Advanced Mathematical Discovery: Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms](human_AI_interactive_technical_report-13.pdf)
+📄 **Read the AIM application report:** [From Meta Idea to Advanced Mathematical Discovery: Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms](https://arxiv.org/abs/2606.24899)
 
 📄 **Read the quantum algorithms paper:** [arXiv 2604.25333](https://arxiv.org/abs/2604.25333)
 
