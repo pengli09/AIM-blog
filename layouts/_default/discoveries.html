@@ -17,9 +17,19 @@
 
 <div class="result-list">
   {{- range $items }}
+  {{- $primaryURL := "" }}
+  {{- with index .links 0 }}
+    {{- $primaryURL = .url }}
+  {{- end }}
   <article class="result-item">
     <header>
-      <h2>{{ .title }}</h2>
+      <h2 class="result-title">
+        {{- if $primaryURL }}
+        <a href="{{ $primaryURL }}" rel="noopener noreferrer" target="_blank">{{ .title }}</a>
+        {{- else }}
+        {{ .title }}
+        {{- end }}
+      </h2>
       <p class="result-meta">{{ delimit .authors ", " }} · {{ .venue }}</p>
     </header>
     <div class="result-links" aria-label="{{ cond (eq site.Language.Lang "zh") "访问链接" "Access links" }}">
