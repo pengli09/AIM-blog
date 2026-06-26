@@ -1,4 +1,6 @@
 - title: "AI Mathematician: Towards Fully Automated Frontier Mathematical Research"
+  pinned: true
+  first_public_date: "2025-05-28"
   authors:
     - "Yuanhang Liu"
     - "Yanxing Huang"
@@ -15,7 +17,25 @@
       url: "/en/posts/aim/"
   summary: "Introduces AIM, a large-reasoning-model agent framework for frontier mathematical research, combining longer exploration trajectories with verification-oriented mechanisms for research-level proof tasks."
 
+- title: "From Meta Idea to Advanced Mathematical Discovery -- Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms"
+  first_public_date: "2026-06-12"
+  authors:
+    - "Yanqiao Wang"
+    - "Jin-Peng Liu"
+    - "Peng Li"
+    - "Yang Liu"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2606.24899"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2606.24899"
+    - label: "Blog"
+      url: "/en/posts/sign-embedding-quantum-algorithms/"
+  summary: "Presents a human-AI co-discovery case study in which AIM-supported exploration, theorem formation, derivation, and audit workflows contributed to sign-embedding quantum algorithms for matrix equations and matrix functions."
+
 - title: "Pessimistic Verification for Open Ended Math Questions"
+  first_public_date: "2025-11-26"
   authors:
     - "Yanxing Huang"
     - "Zihan Tang"
@@ -33,6 +53,7 @@
   summary: "Studies pessimistic verification workflows for open-ended mathematical proofs, where a proof is rejected when any verifier finds a critical error."
 
 - title: "AI Mathematician as a Partner in Advancing Mathematical Discovery -- A Case Study in Homogenization Theory"
+  first_public_date: "2025-10-30"
   authors:
     - "Yuanhang Liu"
     - "Beichen Wang"
@@ -48,23 +69,8 @@
       url: "/en/posts/homogenization.theory/"
   summary: "Presents a homogenization-theory case study showing how AIM-assisted reasoning and targeted human intervention can support the development of a complete mathematical proof."
 
-- title: "From Meta Idea to Advanced Mathematical Discovery -- Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms"
-  authors:
-    - "Yanqiao Wang"
-    - "Jin-Peng Liu"
-    - "Peng Li"
-    - "Yang Liu"
-  venue: "arXiv preprint"
-  links:
-    - label: "arXiv"
-      url: "https://arxiv.org/abs/2606.24899"
-    - label: "DOI"
-      url: "https://doi.org/10.48550/arXiv.2606.24899"
-    - label: "Blog"
-      url: "/en/posts/sign-embedding-quantum-algorithms/"
-  summary: "Presents a human-AI co-discovery case study in which AIM-supported exploration, theorem formation, derivation, and audit workflows contributed to sign-embedding quantum algorithms for matrix equations and matrix functions."
-
 - title: "FormaRL: Enhancing Autoformalization with no Labeled Data"
+  first_public_date: "2025-08-26"
   authors:
     - "Yanxing Huang"
     - "Xinling Jin"
@@ -77,6 +83,8 @@
       url: "https://arxiv.org/abs/2508.18914"
     - label: "DOI"
       url: "https://doi.org/10.48550/arXiv.2508.18914"
+    - label: "PDF"
+      url: "https://openreview.net/pdf?id=Z2El1U94bq"
     - label: "Code"
       url: "https://github.com/TheoryFoundry/FormaRL"
   summary: "Proposes FormaRL, a reinforcement-learning framework for autoformalization that uses unlabeled data, Lean syntax checks, and LLM consistency checks to improve formalization accuracy."

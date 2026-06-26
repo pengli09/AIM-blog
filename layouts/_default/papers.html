@@ -11,13 +11,38 @@
 </header>
 
 {{- $items := index hugo.Data.papers site.Language.Lang | default (slice) }}
+{{- $pinned := where $items "pinned" true }}
+{{- $regular := sort (where $items "pinned" "!=" true) "first_public_date" "desc" }}
+{{- $ordered := slice }}
+{{- range $pinned }}
+  {{- $ordered = $ordered | append . }}
+{{- end }}
+{{- range $regular }}
+  {{- $ordered = $ordered | append . }}
+{{- end }}
+{{- $featuredLabel := cond (eq site.Language.Lang "zh") "置顶" "Featured" }}
 
 <div class="result-list">
-  {{- range $items }}
-  <article class="result-item">
-    <header>
-      <h2>{{ .title }}</h2>
+  {{- range $ordered }}
+  {{- $primaryURL := "" }}
+  {{- with index .links 0 }}
+    {{- $primaryURL = .url }}
+  {{- end }}
+  <article class="result-item{{ if .pinned }} result-item--pinned{{ end }}">
+    <header class="result-item__header">
+      <div>
+        <h2 class="result-title">
+          {{- if $primaryURL }}
+          <a href="{{ $primaryURL }}" rel="noopener noreferrer" target="_blank">{{ .title }}</a>
+          {{- else }}
+          {{ .title }}
+          {{- end }}
+        </h2>
       <p class="result-meta">{{ delimit .authors ", " }} · {{ .venue }}</p>
+      </div>
+      {{- if .pinned }}
+      <span class="result-badge">{{ $featuredLabel }}</span>
+      {{- end }}
     </header>
     <div class="result-links" aria-label="{{ cond (eq site.Language.Lang "zh") "访问链接" "Access links" }}">
       {{- range .links }}
