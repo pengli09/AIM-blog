@@ -48,6 +48,22 @@
       url: "/en/posts/homogenization.theory/"
   summary: "Presents a homogenization-theory case study showing how AIM-assisted reasoning and targeted human intervention can support the development of a complete mathematical proof."
 
+- title: "From Meta Idea to Advanced Mathematical Discovery -- Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms"
+  authors:
+    - "Yanqiao Wang"
+    - "Jin-Peng Liu"
+    - "Peng Li"
+    - "Yang Liu"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2606.24899"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2606.24899"
+    - label: "Blog"
+      url: "/en/posts/sign-embedding-quantum-algorithms/"
+  summary: "Presents a human-AI co-discovery case study in which AIM-supported exploration, theorem formation, derivation, and audit workflows contributed to sign-embedding quantum algorithms for matrix equations and matrix functions."
+
 - title: "FormaRL: Enhancing Autoformalization with no Labeled Data"
   authors:
     - "Yanxing Huang"
