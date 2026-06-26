@@ -33,15 +33,15 @@ relativeURLs = false
     label = "EN"
     weight = 1
     [[languages.en.menu.main]]
-      name = "Team Blog"
+      name = "Posts"
       url = "/team-blog/"
       weight = 10
     [[languages.en.menu.main]]
-      name = "Papers & Preprints"
+      name = "Publications"
       url = "/papers/"
       weight = 20
     [[languages.en.menu.main]]
-      name = "AIM Math Results"
+      name = "Discoveries"
       url = "/aim-results/"
       weight = 30
     [[languages.en.menu.main]]

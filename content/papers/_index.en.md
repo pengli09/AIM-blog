@@ -1,5 +1,5 @@
 ---
-title: "Papers & Preprints"
+title: "Publications"
 description: "Papers and preprints authored by our team."
 layout: "papers"
 aim_section: "papers"
