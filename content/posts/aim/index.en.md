@@ -6,8 +6,8 @@ description: "We present AIM, a multi-agent framework powered by large language 
 tags: ["AI Mathematician", "AI4Math", "LLM", "Research Automation"]
 categories: ["Research Highlights"]
 aim_sections: ["posts", "publications"]
-ShowToc: false
-TocOpen: true
+ShowToc: true
+TocOpen: false
 cover:
   image: "figures/aim_workflow.png"
   alt: "Overview of the AIM Framework"

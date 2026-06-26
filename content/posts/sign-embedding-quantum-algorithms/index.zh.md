@@ -6,8 +6,8 @@ description: "人机协同推进量子算法研究，提出“符号嵌入量子
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Quantum Algorithms"]
 categories: ["研究亮点"]
 aim_sections: ["posts"]
-ShowToc: false
-TocOpen: true
+ShowToc: true
+TocOpen: false
 cover:
   image: "figures/research-loop-workflow.png"
   alt: "从固定目标证明流程转向人机协同研究闭环"

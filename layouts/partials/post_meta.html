@@ -1,0 +1,37 @@
+{{- $meta := slice -}}
+
+{{- if not .Date.IsZero -}}
+{{- $dateFormat := cond (eq .Lang "zh") "2006年1月2日" (default "January 2, 2006" site.Params.DateFormat) -}}
+{{- $dateText := .Date | time.Format $dateFormat -}}
+{{- $meta = $meta | append (dict "text" $dateText "title" (printf "%s" .Date)) -}}
+{{- end -}}
+
+{{- if (.Param "ShowReadingTime") -}}
+{{- $readingTime := .ReadingTime -}}
+{{- if eq .Lang "zh" -}}
+{{- $chars := len (replaceRE "\\s+" "" .Plain) -}}
+{{- $readingTime = div (add $chars 499) 500 -}}
+{{- end -}}
+{{- $readUnit := cond (eq .Lang "zh") "分钟" "min" -}}
+{{- $readText := cond (eq .Lang "zh") (printf "预计阅读时间：%d %s" $readingTime $readUnit) (printf "Estimated Reading Time: %d %s" $readingTime $readUnit) -}}
+{{- $meta = $meta | append (dict "text" $readText) -}}
+{{- end -}}
+
+{{- $authors := .Params.authors | default .Params.author | default site.Params.author -}}
+{{- with $authors -}}
+{{- $authorText := "" -}}
+{{- if reflect.IsSlice . -}}
+{{- $authorText = delimit . ", " -}}
+{{- else -}}
+{{- $authorText = printf "%s" . -}}
+{{- end -}}
+{{- if $authorText -}}
+{{- $authorLabel := cond (eq $.Lang "zh") "作者" "Author" -}}
+{{- $meta = $meta | append (dict "text" (printf "%s: %s" $authorLabel $authorText)) -}}
+{{- end -}}
+{{- end -}}
+
+{{- range $index, $item := $meta -}}
+{{- if gt $index 0 }}&nbsp;|&nbsp;{{ end -}}
+<span{{ with $item.title }} title="{{ . }}"{{ end }}>{{ $item.text }}</span>
+{{- end -}}

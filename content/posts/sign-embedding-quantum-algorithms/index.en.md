@@ -6,8 +6,8 @@ description: "Human-AI collaboration advances quantum algorithm research and pro
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Quantum Algorithms"]
 categories: ["Research Highlights"]
 aim_sections: ["posts"]
-ShowToc: false
-TocOpen: true
+ShowToc: true
+TocOpen: false
 cover:
   image: "figures/research-loop-workflow.png"
   alt: "A shift from a fixed proof pipeline to a human-gated research loop"

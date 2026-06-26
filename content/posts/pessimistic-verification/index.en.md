@@ -6,8 +6,8 @@ description: "We present Pessimistic Verification, a simple and efficient way to
 tags: ["AI4Math", "LLM", "Math Verification", "ICML 2026"]
 categories: ["Research Highlights"]
 aim_sections: ["posts", "publications"]
-ShowToc: false
-TocOpen: true
+ShowToc: true
+TocOpen: false
 cover:
   image: "figures/pessimistic_verifiers.svg"
   alt: "Overview of Pessimistic Verification"
