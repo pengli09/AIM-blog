@@ -1,8 +1,8 @@
 {{- $news := where site.RegularPages "Type" "news" }}
 {{- $news = first 5 $news }}
-{{- $title := cond (eq site.Language.Lang "zh") "新闻" "News" }}
-{{- $empty := cond (eq site.Language.Lang "zh") "暂无新闻。" "No news yet." }}
-{{- $more := cond (eq site.Language.Lang "zh") "查看全部新闻" "View all news" }}
+{{- $title := cond (eq site.Language.Lang "zh") "动态" "News" }}
+{{- $empty := cond (eq site.Language.Lang "zh") "暂无动态。" "No news yet." }}
+{{- $more := cond (eq site.Language.Lang "zh") "查看全部动态" "View all news" }}
 <section class="latest-news" aria-labelledby="latest-news-title">
   <div class="latest-news__header">
     <h2 id="latest-news-title">{{ $title }}</h2>

@@ -56,19 +56,19 @@ relativeURLs = false
     label = "中文"
     weight = 2
     [[languages.zh.menu.main]]
-      name = "团队博客"
+      name = "博文"
       url = "/team-blog/"
       weight = 10
     [[languages.zh.menu.main]]
-      name = "论文与预印本"
+      name = "论文"
       url = "/papers/"
       weight = 20
     [[languages.zh.menu.main]]
-      name = "AIM 数学成果"
+      name = "发现"
       url = "/aim-results/"
       weight = 30
     [[languages.zh.menu.main]]
-      name = "新闻"
+      name = "动态"
       url = "/news/"
       weight = 40
     [[languages.zh.menu.main]]
