@@ -5,7 +5,7 @@ authors:
 description: "Human-AI collaboration advances quantum algorithm research and proposes Sign-Embedding Quantum Algorithms."
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Quantum Algorithms"]
 categories: ["Research Highlights"]
-aim_sections: ["team-blog"]
+aim_sections: ["posts"]
 ShowToc: false
 TocOpen: true
 cover:

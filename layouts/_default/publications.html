@@ -10,7 +10,7 @@
   {{- end }}
 </header>
 
-{{- $items := index hugo.Data.papers site.Language.Lang | default (slice) }}
+{{- $items := index hugo.Data.publications site.Language.Lang | default (slice) }}
 {{- $pinned := where $items "pinned" true }}
 {{- $regular := sort (where $items "pinned" "!=" true) "first_public_date" "desc" }}
 {{- $ordered := slice }}
@@ -54,7 +54,7 @@
     {{- end }}
   </article>
   {{- else }}
-  <p class="post-entry">{{ cond (eq site.Language.Lang "zh") "暂无内容。" "No papers yet." }}</p>
+  <p class="post-entry">{{ cond (eq site.Language.Lang "zh") "暂无内容。" "No publications yet." }}</p>
   {{- end }}
 </div>
 

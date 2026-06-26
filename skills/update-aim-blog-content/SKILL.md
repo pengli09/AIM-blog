@@ -1,6 +1,6 @@
 ---
 name: update-aim-blog-content
-description: Use this skill when adding, editing, translating, or reviewing content for the AIM Blog Hugo site, including team blog posts, news items, papers and preprints, AIM math results, navigation labels, bilingual content, images, and local build validation.
+description: Use this skill when adding, editing, translating, or reviewing content for the AIM Blog Hugo site, including blog posts, news items, publications, Discoveries, navigation labels, bilingual content, images, and local build validation.
 metadata:
   short-description: Update AIM Blog content
 ---
@@ -9,10 +9,10 @@ metadata:
 
 This skill guides updates to the AIM Blog Hugo site. Use it for content changes in:
 
-- Team blog posts: `content/posts/`
+- Blog posts: `content/posts/`
 - News: `content/news/`
-- Papers and preprints: `data/papers/`
-- AIM math results: `data/aim_results/`
+- Publications: `data/publications/`
+- Discoveries: `data/discoveries/`
 - Section pages and navigation: `content/*/_index.*.md`, `config.toml`
 - Post assets: page-bundle files such as `content/posts/<slug>/figures/`
 
@@ -46,6 +46,6 @@ Use that reference instead of inventing new fields when adding content.
 - News titles should contain the date as part of the title text. Do not also display a separate system date in the news list unless requested.
 - News items may link to a related blog post through `news_target`.
 - A blog post can belong to multiple sections through `aim_sections`.
-- Papers and AIM results are list-style data entries, not Markdown posts.
+- Publications and Discoveries are list-style data entries, not Markdown posts.
 - Internal links in YAML should usually be language-specific paths, for example `/en/posts/aim/` and `/zh/posts/aim/`.
 - After image edits, validate SVGs with `xmllint --noout` when available.

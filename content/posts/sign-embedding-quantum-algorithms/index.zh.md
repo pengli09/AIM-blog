@@ -5,7 +5,7 @@ authors:
 description: "人机协同推进量子算法研究，提出“符号嵌入量子算法”。"
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Quantum Algorithms"]
 categories: ["研究亮点"]
-aim_sections: ["team-blog"]
+aim_sections: ["posts"]
 ShowToc: false
 TocOpen: true
 cover:

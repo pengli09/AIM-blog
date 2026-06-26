@@ -5,7 +5,7 @@ authors:
 description: "我们提出 AI Mathematician（AIM），一个由大语言模型驱动的多智能体框架，从“解题”走向“做科研”。"
 tags: ["AI Mathematician", "AI4Math", "LLM", "研究自动化"]
 categories: ["研究亮点"]
-aim_sections: ["team-blog", "papers"]
+aim_sections: ["posts", "publications"]
 ShowToc: false
 TocOpen: true
 cover:
