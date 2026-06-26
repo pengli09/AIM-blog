@@ -170,6 +170,12 @@
     background: var(--primary);
 }
 
+.menu a.rss-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
 @media (max-width: 640px) {
     .header-nav {
         align-items: stretch;
@@ -242,6 +248,7 @@
     .menu a {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         min-height: 32px;
         padding: 0 7px;
         border: 1px solid var(--border);
@@ -272,6 +279,25 @@
 
     .menu a[href*="github.com/TheoryFoundry"] svg {
         margin-inline-start: 2px;
+    }
+
+    .menu a.rss-link {
+        width: 32px;
+        padding: 0;
+    }
+
+    .menu a.rss-link .menu-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .menu a.rss-link svg {
+        width: 15px;
+        height: 15px;
     }
 
     .home-info.first-entry {

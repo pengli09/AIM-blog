@@ -49,9 +49,14 @@ relativeURLs = false
       url = "/news/"
       weight = 40
     [[languages.en.menu.main]]
+      identifier = "rss"
+      name = "RSS"
+      url = "/index.xml"
+      weight = 50
+    [[languages.en.menu.main]]
       name = "GitHub"
       url = "https://github.com/TheoryFoundry"
-      weight = 50
+      weight = 60
   [languages.zh]
     label = "中文"
     weight = 2
@@ -72,9 +77,14 @@ relativeURLs = false
       url = "/news/"
       weight = 40
     [[languages.zh.menu.main]]
+      identifier = "rss"
+      name = "RSS"
+      url = "/index.xml"
+      weight = 50
+    [[languages.zh.menu.main]]
       name = "GitHub"
       url = "https://github.com/TheoryFoundry"
-      weight = 50
+      weight = 60
 
 [languages.en.params.homeInfoParams]
   Title = "👋 Welcome"
