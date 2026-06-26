@@ -136,19 +136,112 @@
     background: var(--primary);
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
+    .header-nav {
+        align-items: stretch;
+        box-sizing: border-box;
+        flex-direction: column;
+        gap: 14px;
+        padding-inline: 14px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 12px;
+        margin: 0;
+    }
+
+    .logo a {
+        min-width: 0;
+    }
+
+    .logo-switches {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 6px;
+        margin-inline-start: auto;
+    }
+
+    .logo-switches>span {
+        margin: 0;
+        color: var(--secondary);
+    }
+
+    .lang-menu {
+        margin: 0;
+    }
+
+    .lang-menu a {
+        padding-inline: 4px;
+    }
+
+    .theme-toggle {
+        width: 30px;
+        height: 30px;
+    }
+
     .menu {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
         flex-wrap: wrap;
-        row-gap: 10px;
-        white-space: normal;
+        gap: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .menu li {
+        flex: 0 0 auto;
+        line-height: 1;
     }
 
     .menu li+li {
-        margin-inline-start: 16px;
+        margin-inline-start: 0;
+    }
+
+    .menu a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0 7px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--entry);
+        line-height: 1;
+    }
+
+    .menu a span.active {
+        border-bottom: 0;
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    .menu a[href*="github.com/TheoryFoundry"] {
+        border-color: var(--primary);
+        color: var(--theme);
+        background: var(--primary);
+    }
+
+    .menu a[href*="github.com/TheoryFoundry"] span {
+        min-height: auto;
+        padding: 0;
+        border: 0;
+        color: inherit;
+        background: transparent;
+    }
+
+    .menu a[href*="github.com/TheoryFoundry"] svg {
+        margin-inline-start: 2px;
     }
 
     .home-info.first-entry {
-        padding: 46px 0 24px;
+        padding: 34px 0 24px;
     }
 
     .latest-news__header {
