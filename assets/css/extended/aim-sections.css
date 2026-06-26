@@ -1,3 +1,159 @@
+.main {
+    max-width: calc(var(--main-width, 720px) + var(--gap) * 2);
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.page-header,
+.post-header {
+    margin: 24px auto var(--content-gap);
+}
+
+.page-header h1 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.post-title {
+    margin-bottom: 2px;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.post-description {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.post-content {
+    margin: 30px 0;
+    color: var(--content);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.post-content dl,
+.post-content ol,
+.post-content p,
+.post-content figure,
+.post-content ul {
+    margin-bottom: var(--content-gap, 20px);
+}
+
+.post-content h1 {
+    margin: 28px auto 20px;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.post-content h2 {
+    margin: 24px auto 16px;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.post-content h3 {
+    margin: 24px 0 16px;
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 24px 0 16px;
+    line-height: 1.25;
+}
+
+.post-content li {
+    margin-top: 5px;
+}
+
+.post-content li p {
+    margin-bottom: 0;
+}
+
+.post-content img {
+    margin: 1rem auto;
+    border-radius: 4px;
+}
+
+.post-content figure {
+    text-align: center;
+}
+
+.post-content figure figcaption,
+.post-content figure figcaption a {
+    width: 75%;
+    margin: 10px auto 35px;
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.post-content p:has(> img:only-child) {
+    text-align: center;
+}
+
+.post-content p:has(> img:only-child) + p:has(> em:only-child) {
+    width: 75%;
+    margin: -8px auto 35px;
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.post-content > table {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto var(--content-gap);
+    overflow-x: auto;
+}
+
+.post-content > table caption {
+    caption-side: bottom;
+    margin: 10px auto 0;
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+details.toc {
+    margin: 0 2px 40px;
+    padding: 0.4em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--code-bg);
+    font-size: 15px;
+}
+
+[data-theme="dark"] details.toc {
+    background: var(--entry);
+}
+
+details.toc summary {
+    padding: 0.25rem 0.8rem;
+    cursor: pointer;
+}
+
+details.toc .inner {
+    margin: 0 20px;
+    padding: 10px 20px;
+}
+
+details.toc li ul {
+    margin-inline-start: var(--gap);
+}
+
 .latest-news {
     margin: 0 0 var(--gap);
     padding: var(--gap);
@@ -9,7 +165,38 @@
 .home-info.first-entry {
     min-height: auto;
     margin-bottom: var(--gap);
-    padding: 72px 0 36px;
+    padding: 56px 0 30px;
+}
+
+.first-entry .entry-header h1 {
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.first-entry .entry-content {
+    margin: 14px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.post-entry {
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+}
+
+.entry-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.entry-content {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.entry-footer {
+    font-size: 13px;
 }
 
 .latest-news__header {
@@ -298,6 +485,17 @@
     .menu a.rss-link svg {
         width: 15px;
         height: 15px;
+    }
+
+    .post-title {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .post-content p:has(> img:only-child) + p:has(> em:only-child),
+    .post-content figure figcaption,
+    .post-content figure figcaption a {
+        width: 90%;
     }
 
     .home-info.first-entry {

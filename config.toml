@@ -9,9 +9,11 @@ canonifyURLs = true
 relativeURLs = false
 
 [params]
-  ShowReadingTime = false
+  ShowReadingTime = true
   ShowShareButtons = false     # 👈 关闭底部分享按钮
   ShowPostNavLinks = true
+  ShowToc = true
+  TocOpen = false
   ShowCodeCopyButtons = true
   math = true   # 全站默认开启（单篇可用 front matter 覆盖）
   displayFullLangName = true

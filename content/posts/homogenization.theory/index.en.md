@@ -6,8 +6,8 @@ description: "A human–AI collaboration successfully completed a 17-page mathem
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Homogenization Theory"]
 categories: ["Research Highlights"]
 aim_sections: ["posts", "publications"]
-ShowToc: false
-TocOpen: true
+ShowToc: true
+TocOpen: false
 cover:
   image: "figures/takeaway.msg.png"
   hiddenInSingle: true
