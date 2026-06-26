@@ -426,15 +426,15 @@ Use $update-aim-blog-content to ...
 
 先把内容事实整理清楚。输入越明确，后续返工越少。
 
-- 目标栏目：团队博客、新闻、论文与预印本、AIM 数学成果、导航栏，或栏目页文案。
+- 目标栏目：博文、动态、论文、发现、导航栏，或栏目页文案。
 - 语言范围：只更新英文、只更新中文，还是中英文双语都更新。
-- 团队博客：标题、日期、slug、作者信息、简短摘要、应归属的 `aim_sections` 栏目、正文草稿、图片或 PDF、相关论文或代码链接。
-- 新闻：日期、一句话标题、目标语言，以及如果需要跳转到博客时对应的博客链接。
-- 论文与预印本：标题、作者、发表会议/期刊/预印平台、发表或预印状态、arXiv/DOI/PDF/代码/博客等链接，以及简短摘要。
-- AIM 数学成果：标题、作者、发表会议/期刊/预印平台、来源链接、我们团队是否参与、AIM 或相关 AI 系统在其中起到的作用，以及面向领域专家和面向大众的摘要要求。
+- 博文：标题、日期、slug、作者信息、简短摘要、应归属的 `aim_sections` 栏目、正文草稿、图片或 PDF、相关论文或代码链接。
+- 动态：日期、一句话标题、目标语言，以及如果需要跳转到博文时对应的博文链接。
+- 论文：标题、作者、发表会议/期刊/预印平台、发表或预印状态、arXiv/DOI/PDF/代码/博文等链接，以及简短摘要。
+- 发现：标题、作者、发表会议/期刊/预印平台、来源链接、我们团队是否参与、AIM 或相关 AI 系统在其中起到的作用，以及面向领域专家和面向大众的摘要要求。
 - 措辞约束：需要避免的说法、固定中英文译名、是否需要 AI 生成摘要免责声明等。
 
-## 完整示例：新增论文、博客和新闻
+## 完整示例：新增论文、博文和动态
 
 这个示例展示完整流程：准备内容、让 Codex 修改、在本地检查、提交 PR、合并上线。
 
@@ -443,7 +443,7 @@ Use $update-aim-blog-content to ...
 先准备一段清晰的说明。例如：
 
 ```text
-目标：新增一篇中英文团队博客，把论文加入“论文与预印本”，并新增一条新闻。
+目标：新增一篇中英文博文，把论文加入“论文”，并新增一条动态。
 
 论文：
 - 标题：Pessimistic Verification for Open Ended Math Questions
@@ -461,13 +461,13 @@ Use $update-aim-blog-content to ...
 - 使用我提供的中英文草稿。
 - 使用 figures/pessimistic_verifiers.svg 作为封面。
 
-新闻：
+动态：
 - 英文标题：2026-05-17: Pessimistic Verification introduced for mathematical proof checking
 - 中文标题：2026-05-17：团队提出悲观验证方法，提升大模型数学证明检查能力
-- 新闻点击后跳转到对应博客，不跳转到独立新闻页。
+- 动态点击后跳转到对应博文，不跳转到独立动态页。
 
 约束：
-- 新闻列表里日期只出现在标题中，不额外显示系统日期。
+- 动态列表里日期只出现在标题中，不额外显示系统日期。
 - 中英文页面保持对齐。
 - 修改完成后运行 Hugo 构建验证。
 ```
@@ -552,7 +552,7 @@ review 通过后合并到 `main`。GitHub Actions 会自动构建并发布网站
 - 新内容出现在预期的中英文页面。
 - 链接指向正确页面。
 - 图片和公式正常显示。
-- 新闻、论文、AIM 数学成果出现在正确栏目。
+- 动态、论文、发现出现在正确栏目。
 
 ## 本地预览环境
 
@@ -588,13 +588,13 @@ hugo --gc --minify
 ## 仓库结构
 
 ```text
-content/posts/          团队博客文章 bundle
-content/news/           一句话新闻
-content/team-blog/      团队博客栏目页
-content/papers/         论文与预印本栏目页
-content/aim-results/    AIM 数学成果栏目页
+content/posts/          博文文章 bundle
+content/news/           一句话动态
+content/team-blog/      博文栏目页
+content/papers/         论文栏目页
+content/aim-results/    发现栏目页
 data/papers/            论文列表数据
-data/aim_results/       AIM 数学成果列表数据
+data/aim_results/       发现列表数据
 layouts/                Hugo 模板和本地 PaperMod 覆盖
 assets/css/extended/    自定义样式
 static/                 静态资源
@@ -605,9 +605,9 @@ skills/                 项目 Codex skills
 
 如果无法使用 Codex，或需要 review Codex 的输出，可以参考本节。
 
-### 团队博客
+### 博文
 
-团队博客使用 page bundle，放在 `content/posts/` 下：
+博文使用 page bundle，放在 `content/posts/` 下：
 
 ```text
 content/posts/<slug>/
@@ -655,9 +655,9 @@ cover:
 - 展示公式使用 `\[ ... \]`。
 - 如果 SVG 在深色模式下背景透明导致不清楚，请给 SVG 增加明确的白色背景。
 
-### 新闻
+### 动态
 
-新闻文件放在 `content/news/`：
+动态文件放在 `content/news/`：
 
 ```text
 content/news/<slug>.en.md
@@ -679,15 +679,15 @@ The team introduced Pessimistic Verification for open-ended mathematical proof c
 
 规则：
 
-- 新闻展示为一句可点击的标题。
-- 日期写在 `title` 里；新闻列表不会额外显示系统日期。
-- 如果新闻应跳转到相关博客，填写 `news_target`。
-- 不填 `news_target` 时，新闻会链接到自身页面。
+- 动态展示为一句可点击的标题。
+- 日期写在 `title` 里；动态列表不会额外显示系统日期。
+- 如果动态应跳转到相关博文，填写 `news_target`。
+- 不填 `news_target` 时，动态会链接到自身页面。
 - 双语更新时同时添加 `.en.md` 和 `.zh.md`。
 
-### 论文与预印本
+### 论文
 
-“论文与预印本”栏目由 YAML 数据驱动：
+“论文”栏目由 YAML 数据驱动：
 
 ```text
 data/papers/en.yaml
@@ -715,13 +715,13 @@ data/papers/zh.yaml
 规则：
 
 - 英文和中文条目应保持一一对应。
-- 可提供多个链接：arXiv、DOI、PDF、代码、项目主页、博客、新闻报道等。
+- 可提供多个链接：arXiv、DOI、PDF、代码、项目主页、博文、报道等。
 - 内部博客链接应使用对应语言：英文数据里用 `/en/posts/.../`，中文数据里用 `/zh/posts/.../`。
 - 条目顺序应有明确规则，通常按时间或重要性排序。
 
-### AIM 数学成果
+### 发现
 
-“AIM 数学成果”栏目也由 YAML 数据驱动：
+“发现”栏目也由 YAML 数据驱动：
 
 ```text
 data/aim_results/en.yaml
@@ -751,7 +751,7 @@ data/aim_results/zh.yaml
 - 表述上应避免暗示 AIM 独立完成或独立产出了数学成果。
 - 同时提供 `summary_expert` 和 `summary_public`。
 - 这些摘要通常为 AI 生成；除非明确要求修改布局，否则保留页面上的 AI-generated-summary 提示。
-- 尽量补全来源链接，例如 arXiv、DOI、官网、代码、新闻报道等。
+- 尽量补全来源链接，例如 arXiv、DOI、官网、代码、报道等。
 
 ### 栏目页和导航栏
 
