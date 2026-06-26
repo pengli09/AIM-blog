@@ -27,9 +27,20 @@
 {{- $pages = $pctx.Pages }}
 {{- end }}
 {{- $pages = where $pages "Params.hiddenInRss" "!=" true -}}
+{{- $pages = where $pages "Section" "!=" "news" -}}
 {{- $limit := site.Config.Services.RSS.Limit }}
 {{- if ge $limit 1 }}
 {{- $pages = $pages | first $limit }}
+{{- end }}
+{{- $includePublications := or .IsHome (eq .Section "publications") }}
+{{- $includeDiscoveries := or .IsHome (eq .Section "discoveries") }}
+{{- $publications := slice }}
+{{- if $includePublications }}
+  {{- $publications = index hugo.Data.publications site.Language.Lang | default (slice) }}
+{{- end }}
+{{- $discoveries := slice }}
+{{- if $includeDiscoveries }}
+  {{- $discoveries = index hugo.Data.discoveries site.Language.Lang | default (slice) }}
 {{- end }}
 {{- $displayTitle := .Title }}
 {{- if eq site.Language.Lang "zh" }}
@@ -56,7 +67,7 @@
     <language>{{ site.Language.Locale }}</language>{{ with $authorEmail }}
     <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
     <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with site.Copyright }}
-    <copyright>{{ . | markdownify | plainify | strings.TrimPrefix "© " }}</copyright>{{ end }}{{ if not .Date.IsZero }}
+    <copyright>{{ . | markdownify | plainify | strings.TrimPrefix "© " }}</copyright>{{ end }}{{ if and (not .Date.IsZero) (gt (len $pages) 0) }}
     <lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{- with .OutputFormats.Get "RSS" }}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
@@ -73,6 +84,39 @@
       {{- if and site.Params.ShowFullTextinRSS .Content }}
       <content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}</content:encoded>
       {{- end }}
+    </item>
+    {{- end }}
+    {{- end }}
+    {{- range $publications }}
+    {{- $primaryURL := "" }}
+    {{- with index .links 0 }}
+      {{- $primaryURL = .url }}
+    {{- end }}
+    {{- if $primaryURL }}
+    <item>
+      <title>{{ .title }}</title>
+      <link>{{ $primaryURL | absLangURL }}</link>
+      {{- with .first_public_date }}
+      <pubDate>{{ (time.AsTime .).Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- end }}
+      <guid>{{ $primaryURL | absLangURL }}</guid>
+      <category>{{ cond (eq site.Language.Lang "zh") "论文" "Publications" }}</category>
+      <description>{{ with .summary | html }}{{ . }}{{ end -}}</description>
+    </item>
+    {{- end }}
+    {{- end }}
+    {{- range $discoveries }}
+    {{- $primaryURL := "" }}
+    {{- with index .links 0 }}
+      {{- $primaryURL = .url }}
+    {{- end }}
+    {{- if $primaryURL }}
+    <item>
+      <title>{{ .title }}</title>
+      <link>{{ $primaryURL | absLangURL }}</link>
+      <guid>{{ $primaryURL | absLangURL }}</guid>
+      <category>{{ cond (eq site.Language.Lang "zh") "发现" "Discoveries" }}</category>
+      <description>{{ with .summary_public | html }}{{ . }}{{ end -}}</description>
     </item>
     {{- end }}
     {{- end }}
