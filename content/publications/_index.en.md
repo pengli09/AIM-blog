@@ -1,6 +1,8 @@
 ---
 title: "Publications"
 description: "Papers and preprints authored by our team."
-layout: "papers"
-aim_section: "papers"
+layout: "publications"
+aim_section: "publications"
+aliases:
+  - "/papers/"
 ---

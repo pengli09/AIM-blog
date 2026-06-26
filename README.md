@@ -24,12 +24,12 @@ The skill tells Codex how this repository is structured, how each section stores
 
 Prepare the content facts first. The more precise the input, the less cleanup is needed.
 
-- Target section: team blog, news, papers and preprints, AIM math results, navigation, or section page text.
+- Target section: posts, news, publications, Discoveries, navigation, or section page text.
 - Language scope: English only, Chinese only, or bilingual.
-- For a team blog post: title, date, slug, authors if any, short description, target sections for `aim_sections`, draft/body text, images or PDFs, and related paper/code links.
+- For a blog post: title, date, slug, authors if any, short description, target sections for `aim_sections`, draft/body text, images or PDFs, and related paper/code links.
 - For news: date, one-sentence title, target language, and the related blog URL if the news should jump to a blog post.
-- For papers and preprints: title, authors, venue, publication/preprint status, links such as arXiv/DOI/PDF/code/blog, and a short summary.
-- For AIM math results: title, authors, venue or platform, source links, whether our team participated, how AIM or related AI systems contributed, and both expert-facing and public-facing summary requirements.
+- For publications: title, authors, venue, publication/preprint status, links such as arXiv/DOI/PDF/code/blog, and a short summary.
+- For Discoveries: title, authors, venue or platform, source links, whether our team participated, how AIM or related AI systems contributed, and both expert-facing and public-facing summary requirements.
 - Wording constraints: terms to avoid, preferred Chinese/English names, fixed translations, and whether AI-generated summaries need special disclaimers.
 
 ## Complete Example: Add a New Paper, Blog, and News Item
@@ -41,7 +41,7 @@ This example shows the intended end-to-end workflow: prepare content, ask Codex 
 Create a short brief for Codex. For example:
 
 ```text
-Target: add a bilingual team blog post, add the paper to Papers & Preprints, and add one news item.
+Target: add a bilingual blog post, add the paper to Publications, and add one news item.
 
 Paper:
 - Title: Pessimistic Verification for Open Ended Math Questions
@@ -55,7 +55,7 @@ Blog:
 - Slug: pessimistic-verification
 - English title: Pessimistic Verification: Helping LLMs Check Mathematical Proofs
 - Chinese title: 悲观验证：让大模型更会检查数学证明
-- Sections: team-blog, papers
+- Sections: posts, publications
 - Use the attached English and Chinese drafts.
 - Use figures/pessimistic_verifiers.svg as the cover.
 
@@ -106,8 +106,8 @@ http://localhost:1313/
 Check the affected pages, usually:
 
 - `/en/` and `/zh/`
-- `/en/team-blog/` and `/zh/team-blog/`
-- `/en/papers/` and `/zh/papers/`
+- `/en/posts/` and `/zh/posts/`
+- `/en/publications/` and `/zh/publications/`
 - `/en/news/` and `/zh/news/`
 - the new post pages under `/en/posts/<slug>/` and `/zh/posts/<slug>/`
 
@@ -150,7 +150,7 @@ After the deployment finishes, open the production pages and confirm:
 - The new content appears in the expected language versions.
 - Links point to the intended pages.
 - Images and math render correctly.
-- News, papers, and AIM math results appear in the correct sections.
+- News, publications, and Discoveries appear in the correct sections.
 
 ## Local Setup for Previewing Codex Changes
 
@@ -186,13 +186,12 @@ hugo --gc --minify
 ## Repository Layout
 
 ```text
-content/posts/          Team blog post bundles
+content/posts/          Blog post bundles and Posts section pages
 content/news/           One-line news items
-content/team-blog/      Team blog section pages
-content/papers/         Papers section pages
-content/aim-results/    AIM math results section pages
-data/papers/            Paper list data
-data/aim_results/       AIM math result list data
+content/publications/   Publications section pages
+content/discoveries/    Discoveries section pages
+data/publications/      Publication list data
+data/discoveries/       Discovery list data
 layouts/                Hugo templates and local PaperMod overrides
 assets/css/extended/    Custom styles
 static/                 Static site assets
@@ -203,9 +202,9 @@ skills/                 Project Codex skills
 
 Use this section when you need to update content without Codex, or when reviewing Codex's output.
 
-### Team Blog Posts
+### Posts
 
-Team blog posts live in page bundles under `content/posts/`:
+Blog posts live in page bundles under `content/posts/`:
 
 ```text
 content/posts/<slug>/
@@ -227,7 +226,7 @@ authors:
 description: "We present Pessimistic Verification, a simple and efficient way to improve LLM-based verification for open-ended mathematical proofs."
 tags: ["AI4Math", "LLM", "Math Verification"]
 categories: ["Research Highlights"]
-aim_sections: ["team-blog", "papers"]
+aim_sections: ["posts", "publications"]
 ShowToc: false
 TocOpen: true
 cover:
@@ -240,7 +239,7 @@ cover:
 
 Important fields:
 
-- `aim_sections`: controls section membership. A post can belong to multiple sections, for example `["team-blog", "papers"]`.
+- `aim_sections`: controls section membership. A post can belong to multiple sections, for example `["posts", "publications"]`.
 - `cover.image`: image path relative to the post bundle.
 - `hiddenInSingle: true`: hides the cover inside the full post while keeping it available for cards.
 
@@ -283,13 +282,13 @@ Rules:
 - If `news_target` is omitted, the news item links to its own news page.
 - Add both `.en.md` and `.zh.md` when updating bilingual news.
 
-### Papers and Preprints
+### Publications
 
-The Papers & Preprints section is data-driven:
+The Publications section is data-driven:
 
 ```text
-data/papers/en.yaml
-data/papers/zh.yaml
+data/publications/en.yaml
+data/publications/zh.yaml
 ```
 
 Add one entry to each file:
@@ -317,13 +316,13 @@ Rules:
 - Use language-specific internal links: `/en/posts/.../` in `en.yaml`, `/zh/posts/.../` in `zh.yaml`.
 - Keep the order intentional, usually newest or most important first.
 
-### AIM Math Results
+### Discoveries
 
-The AIM Math Results section is data-driven:
+The Discoveries section is data-driven:
 
 ```text
-data/aim_results/en.yaml
-data/aim_results/zh.yaml
+data/discoveries/en.yaml
+data/discoveries/zh.yaml
 ```
 
 Example:
@@ -356,12 +355,12 @@ Rules:
 Section landing pages:
 
 ```text
-content/team-blog/_index.en.md
-content/team-blog/_index.zh.md
-content/papers/_index.en.md
-content/papers/_index.zh.md
-content/aim-results/_index.en.md
-content/aim-results/_index.zh.md
+content/posts/_index.en.md
+content/posts/_index.zh.md
+content/publications/_index.en.md
+content/publications/_index.zh.md
+content/discoveries/_index.en.md
+content/discoveries/_index.zh.md
 content/news/_index.en.md
 content/news/_index.zh.md
 ```
@@ -457,7 +456,7 @@ Use $update-aim-blog-content to ...
 - Slug：pessimistic-verification
 - 英文标题：Pessimistic Verification: Helping LLMs Check Mathematical Proofs
 - 中文标题：悲观验证：让大模型更会检查数学证明
-- 所属栏目：team-blog, papers
+- 所属栏目：posts, publications
 - 使用我提供的中英文草稿。
 - 使用 figures/pessimistic_verifiers.svg 作为封面。
 
@@ -508,8 +507,8 @@ http://localhost:1313/
 通常需要检查：
 
 - `/en/` 和 `/zh/`
-- `/en/team-blog/` 和 `/zh/team-blog/`
-- `/en/papers/` 和 `/zh/papers/`
+- `/en/posts/` 和 `/zh/posts/`
+- `/en/publications/` 和 `/zh/publications/`
 - `/en/news/` 和 `/zh/news/`
 - 新博客 `/en/posts/<slug>/` 和 `/zh/posts/<slug>/`
 
@@ -590,11 +589,11 @@ hugo --gc --minify
 ```text
 content/posts/          博文文章 bundle
 content/news/           一句话动态
-content/team-blog/      博文栏目页
-content/papers/         论文栏目页
-content/aim-results/    发现栏目页
-data/papers/            论文列表数据
-data/aim_results/       发现列表数据
+content/posts/          博文栏目页
+content/publications/   论文栏目页
+content/discoveries/    发现栏目页
+data/publications/      论文列表数据
+data/discoveries/       发现列表数据
 layouts/                Hugo 模板和本地 PaperMod 覆盖
 assets/css/extended/    自定义样式
 static/                 静态资源
@@ -629,7 +628,7 @@ authors:
 description: "We present Pessimistic Verification, a simple and efficient way to improve LLM-based verification for open-ended mathematical proofs."
 tags: ["AI4Math", "LLM", "Math Verification"]
 categories: ["Research Highlights"]
-aim_sections: ["team-blog", "papers"]
+aim_sections: ["posts", "publications"]
 ShowToc: false
 TocOpen: true
 cover:
@@ -642,7 +641,7 @@ cover:
 
 常用字段：
 
-- `aim_sections`：控制文章属于哪些栏目。同一篇文章可以属于多个栏目，例如 `["team-blog", "papers"]`。
+- `aim_sections`：控制文章属于哪些栏目。同一篇文章可以属于多个栏目，例如 `["posts", "publications"]`。
 - `cover.image`：封面图，相对于当前文章 bundle。
 - `hiddenInSingle: true`：封面用于列表卡片，但不在文章页顶部重复显示。
 
@@ -690,8 +689,8 @@ The team introduced Pessimistic Verification for open-ended mathematical proof c
 “论文”栏目由 YAML 数据驱动：
 
 ```text
-data/papers/en.yaml
-data/papers/zh.yaml
+data/publications/en.yaml
+data/publications/zh.yaml
 ```
 
 新增论文时，在两个文件中各加一条：
@@ -724,8 +723,8 @@ data/papers/zh.yaml
 “发现”栏目也由 YAML 数据驱动：
 
 ```text
-data/aim_results/en.yaml
-data/aim_results/zh.yaml
+data/discoveries/en.yaml
+data/discoveries/zh.yaml
 ```
 
 示例：
@@ -758,12 +757,12 @@ data/aim_results/zh.yaml
 栏目页位置：
 
 ```text
-content/team-blog/_index.en.md
-content/team-blog/_index.zh.md
-content/papers/_index.en.md
-content/papers/_index.zh.md
-content/aim-results/_index.en.md
-content/aim-results/_index.zh.md
+content/posts/_index.en.md
+content/posts/_index.zh.md
+content/publications/_index.en.md
+content/publications/_index.zh.md
+content/discoveries/_index.en.md
+content/discoveries/_index.zh.md
 content/news/_index.en.md
 content/news/_index.zh.md
 ```

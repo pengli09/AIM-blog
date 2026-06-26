@@ -5,7 +5,7 @@ authors:
 description: "人机协作成功完成一项均匀化理论研究的约17页数学证明。"
 tags: ["AI Mathematician", "AI4Math", "Human-AI Collaboration", "Homogenization Theory"]
 categories: ["研究亮点"]
-aim_sections: ["team-blog", "papers"]
+aim_sections: ["posts", "publications"]
 ShowToc: false
 TocOpen: true
 cover:

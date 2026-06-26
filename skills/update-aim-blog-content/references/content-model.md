@@ -2,7 +2,7 @@
 
 Use these conventions when adding or editing site content.
 
-## Team Blog Posts
+## Posts
 
 Posts live in page bundles:
 
@@ -24,7 +24,7 @@ authors:
 description: "Short summary for cards and metadata."
 tags: ["AI4Math", "LLM"]
 categories: ["Research Highlights"]
-aim_sections: ["team-blog", "papers"]
+aim_sections: ["posts", "publications"]
 ShowToc: false
 TocOpen: true
 cover:
@@ -39,7 +39,7 @@ Rules:
 
 - Create both `index.en.md` and `index.zh.md` when adding a bilingual post.
 - Use the same slug for both languages.
-- `aim_sections` controls section membership. A post can appear in multiple sections. Current common values include `team-blog` and `papers`.
+- `aim_sections` controls section membership. A post can appear in multiple sections. Current common values include `posts` and `publications`.
 - Use `<!--more-->` to control the homepage excerpt when useful.
 - Keep post assets inside the page bundle and reference them with relative paths such as `figures/plot.png`.
 - Use `\( ... \)` for inline LaTeX and display math blocks such as `\[ ... \]`.
@@ -74,13 +74,13 @@ Rules:
 - `news_target` may be language-neutral, for example `/posts/aim/`; templates convert it with `absLangURL`.
 - Add both English and Chinese news files for bilingual updates.
 
-## Papers and Preprints
+## Publications
 
-Papers are data entries:
+Publications are data entries:
 
 ```text
-data/papers/en.yaml
-data/papers/zh.yaml
+data/publications/en.yaml
+data/publications/zh.yaml
 ```
 
 Entry shape:
@@ -106,13 +106,13 @@ Rules:
 - Use multiple links when useful: arXiv, DOI, PDF, code, project page, blog.
 - Internal blog links should point to the matching language, for example `/en/posts/.../` in `en.yaml` and `/zh/posts/.../` in `zh.yaml`.
 
-## AIM Math Results
+## Discoveries
 
-AIM math results are data entries:
+Discoveries are data entries:
 
 ```text
-data/aim_results/en.yaml
-data/aim_results/zh.yaml
+data/discoveries/en.yaml
+data/discoveries/zh.yaml
 ```
 
 Entry shape:
@@ -143,12 +143,12 @@ Rules:
 Section landing pages live under:
 
 ```text
-content/team-blog/_index.en.md
-content/team-blog/_index.zh.md
-content/papers/_index.en.md
-content/papers/_index.zh.md
-content/aim-results/_index.en.md
-content/aim-results/_index.zh.md
+content/posts/_index.en.md
+content/posts/_index.zh.md
+content/publications/_index.en.md
+content/publications/_index.zh.md
+content/discoveries/_index.en.md
+content/discoveries/_index.zh.md
 content/news/_index.en.md
 content/news/_index.zh.md
 ```

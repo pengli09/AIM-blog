@@ -34,15 +34,15 @@ relativeURLs = false
     weight = 1
     [[languages.en.menu.main]]
       name = "Posts"
-      url = "/team-blog/"
+      url = "/posts/"
       weight = 10
     [[languages.en.menu.main]]
       name = "Publications"
-      url = "/papers/"
+      url = "/publications/"
       weight = 20
     [[languages.en.menu.main]]
       name = "Discoveries"
-      url = "/aim-results/"
+      url = "/discoveries/"
       weight = 30
     [[languages.en.menu.main]]
       name = "News"
@@ -57,15 +57,15 @@ relativeURLs = false
     weight = 2
     [[languages.zh.menu.main]]
       name = "博文"
-      url = "/team-blog/"
+      url = "/posts/"
       weight = 10
     [[languages.zh.menu.main]]
       name = "论文"
-      url = "/papers/"
+      url = "/publications/"
       weight = 20
     [[languages.zh.menu.main]]
       name = "发现"
-      url = "/aim-results/"
+      url = "/discoveries/"
       weight = 30
     [[languages.zh.menu.main]]
       name = "动态"

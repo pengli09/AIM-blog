@@ -31,12 +31,20 @@
 {{- if ge $limit 1 }}
 {{- $pages = $pages | first $limit }}
 {{- end }}
+{{- $displayTitle := .Title }}
+{{- if eq site.Language.Lang "zh" }}
+  {{- if eq $displayTitle "Categories" }}
+    {{- $displayTitle = "分类" }}
+  {{- else if eq $displayTitle "Tags" }}
+    {{- $displayTitle = "标签" }}
+  {{- end }}
+{{- end }}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>{{ if eq .Title site.Title }}{{ site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ $displayTitle }}{{ if eq site.Language.Lang "zh" }} | {{ else }} on {{ end }}{{ site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Recent content {{ if ne .Title site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ site.Title }}</description>
+    <description>{{ if eq site.Language.Lang "zh" }}{{ if .IsHome }}最新内容，来自{{ site.Title }}{{ else }}{{ $displayTitle }}的最新内容，来自{{ site.Title }}{{ end }}{{ else }}Recent content {{ if not .IsHome }}in {{ .Title }} {{ end }}on {{ site.Title }}{{ end }}</description>
     {{- with site.Params.images }}
     <image>
       <title>{{ site.Title }}</title>
