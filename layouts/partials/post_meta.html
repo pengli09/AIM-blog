@@ -9,7 +9,7 @@
 {{- if (.Param "ShowReadingTime") -}}
 {{- $readingTime := .ReadingTime -}}
 {{- if eq .Lang "zh" -}}
-{{- $chars := len (replaceRE "\\s+" "" .Plain) -}}
+{{- $chars := strings.CountRunes .Plain -}}
 {{- $readingTime = div (add $chars 499) 500 -}}
 {{- end -}}
 {{- $readUnit := cond (eq .Lang "zh") "分钟" "min" -}}
