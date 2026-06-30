@@ -246,6 +246,16 @@ details.toc li ul {
     font-size: 14px;
 }
 
+.visitor-count {
+    white-space: nowrap;
+}
+
+.visitor-count strong {
+    color: var(--primary);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
 .result-list {
     display: grid;
     gap: var(--gap);

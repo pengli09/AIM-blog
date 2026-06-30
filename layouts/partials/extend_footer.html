@@ -1,0 +1,27 @@
+{{- if .IsHome }}
+<script>
+  const footer = document.querySelector(".footer");
+  if (footer) {
+    const counter = document.createElement("span");
+    counter.className = "visitor-count";
+    counter.setAttribute("aria-live", "polite");
+    {{- if eq site.Language.Lang "zh" }}
+    counter.append("累计访问 ");
+    {{- end }}
+
+    const value = document.createElement("strong");
+    value.id = "busuanzi_site_pv";
+    value.textContent = "--";
+    {{- if eq site.Language.Lang "zh" }}
+    counter.append(value, " 次");
+    {{- else }}
+    counter.append(value, " Total Visits");
+    {{- end }}
+    footer.append(" · ", counter);
+  }
+</script>
+{{- end }}
+
+{{- if hugo.IsProduction }}
+<script defer src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js"></script>
+{{- end }}
