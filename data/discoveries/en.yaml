@@ -1,3 +1,16 @@
+- title: "Derivations of Generalized Moduli Algebras of Isolated Hypersurface Singularities"
+  authors:
+    - "Zhiwen Liu"
+    - "Stephen S.-T. Yau"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2608.22756"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2608.22756"
+  summary_expert: "Determines the difference between the dimensions of the Yau algebra and the new Yau algebra of an isolated complex hypersurface singularity in terms of the Hessian corank. The two derivation Lie algebras vanish in the Morse case; when the Hessian corank is one, the new invariant is smaller by one; otherwise their dimensions agree. In particular, equality holds when n is at least 2 and mult(f) is at least 3, proving a conjecture of Chen--Hussain--Yau--Zuo. An exact sequence with end terms given by copies of the Milnor algebra's socle explains the underlying dimension count."
+  summary_public: "This work compares two algebraic measurements of the infinitesimal symmetries of an isolated hypersurface singularity. It shows that their dimensions are usually equal, with a precise one-dimensional exception controlled by the degeneracy of the Hessian, and thereby resolves a previously proposed conjecture."
+
 - title: "Sign Embedding Quantum Algorithms for Matrix Equations and Matrix Functions"
   authors:
     - "Yanqiao Wang"

@@ -1,3 +1,16 @@
+- title: "Derivations of Generalized Moduli Algebras of Isolated Hypersurface Singularities"
+  authors:
+    - "Zhiwen Liu"
+    - "Stephen S.-T. Yau"
+  venue: "arXiv 预印本"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2608.22756"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2608.22756"
+  summary_expert: "该工作用 Hessian 的余秩刻画孤立复超曲面奇点的 Yau 代数与新 Yau 代数之维数差：在 Morse 情形下两个导子李代数均为零；当 Hessian 余秩为 1 时，新 Yau 代数的维数少 1；其余情形二者维数相等。特别地，当 n 不低于 2 且 mult(f) 不低于 3 时二者维数相等，从而证明 Chen--Hussain--Yau--Zuo 提出的一个猜想。工作还构造了一个两端均为 Milnor 代数基座副本的正合列，揭示维数计算背后的代数结构。"
+  summary_public: "这项工作比较了两种刻画孤立超曲面奇点无穷小对称性的代数量。研究证明，它们的维数通常相等，只有一种由 Hessian 退化程度精确控制的情形会相差 1，并由此解决了此前提出的一个猜想。"
+
 - title: "Sign Embedding Quantum Algorithms for Matrix Equations and Matrix Functions"
   authors:
     - "Yanqiao Wang"
