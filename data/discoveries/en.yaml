@@ -1,3 +1,17 @@
+- title: "Well-posedness of Filtering Equations in Weighted Sobolev Spaces with Unbounded System Coefficients"
+  authors:
+    - "Zeju Sun"
+    - "Songlin Zhou"
+    - "Stephen S.-T. Yau"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2609.03549"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2609.03549"
+  summary_expert: "Establishes existence and uniqueness for the robust DMZ, stochastic DMZ, and Kushner-Stratonovich equations under suitable assumptions allowing polynomially growing coefficients. Exponential weights support a variational proof, while gauge transformations connect the equations through buffered weighted Sobolev spaces. AIM assisted with identifying and testing the weight scale and organizing proof steps; the authors selected the final assumptions and verified the results."
+  summary_public: "Filtering estimates a hidden system's state from noisy measurements. This work gives conditions ensuring that three central filtering equations have unique solutions even when model coefficients grow without bound. AIM helped explore mathematical tools and draft arguments, with the final results checked by the researchers."
+
 - title: "Derivations of Generalized Moduli Algebras of Isolated Hypersurface Singularities"
   authors:
     - "Zhiwen Liu"

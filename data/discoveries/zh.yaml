@@ -1,3 +1,17 @@
+- title: "Well-posedness of Filtering Equations in Weighted Sobolev Spaces with Unbounded System Coefficients"
+  authors:
+    - "Zeju Sun"
+    - "Songlin Zhou"
+    - "Stephen S.-T. Yau"
+  venue: "arXiv 预印本"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2609.03549"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2609.03549"
+  summary_expert: "该工作在允许系数按多项式增长的适当假设下，证明鲁棒 DMZ、随机 DMZ 和 Kushner-Stratonovich 方程解的存在唯一性。方法利用指数型权函数建立变分证明，并通过规范变换在带缓冲参数的加权 Sobolev 空间中统一处理三类方程。AIM 协助识别和检验权函数的增长尺度、组织证明步骤，最终假设由作者选定，结果由作者核验。"
+  summary_public: "滤波研究如何从带噪声的观测中估计系统的隐藏状态。这项工作给出了保证三类核心滤波方程有唯一解的条件，允许模型系数无界增长。AIM 协助探索数学工具和起草论证，最终结果由研究者检查确认。"
+
 - title: "Derivations of Generalized Moduli Algebras of Isolated Hypersurface Singularities"
   authors:
     - "Zhiwen Liu"
