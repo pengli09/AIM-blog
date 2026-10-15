@@ -17,6 +17,25 @@
       url: "/en/posts/aim/"
   summary: "Introduces AIM, a large-reasoning-model agent framework for frontier mathematical research, combining longer exploration trajectories with verification-oriented mechanisms for research-level proof tasks."
 
+- title: "Learning Individual Scientific Taste with Privileged Hindsight Distillation"
+  first_public_date: "2026-10-14"
+  authors:
+    - "Hanwei Fan"
+    - "Yanqiao Wang"
+    - "Yiqi Zhu"
+    - "Xuanyu Lei"
+    - "Peng Li"
+    - "Yang Liu"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2610.19719"
+    - label: "PDF"
+      url: "https://arxiv.org/pdf/2610.19719"
+    - label: "Blog"
+      url: "/en/posts/individual-scientific-taste/"
+  summary: "Learns individual scientific taste from sparse pairwise feedback through shared criterion assessments, a population preference mapping, and researcher-specific adaptation. Privileged Hindsight Distillation uses later scientific evidence during training while preserving proposal-visible inference."
+
 - title: "From Meta Idea to Advanced Mathematical Discovery -- Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms"
   first_public_date: "2026-06-12"
   authors:
