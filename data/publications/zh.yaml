@@ -17,6 +17,25 @@
       url: "/zh/posts/aim/"
   summary: "提出 AIM，一个面向前沿数学研究的大推理模型智能体框架，结合长程探索轨迹和面向验证的机制来处理研究级证明任务。"
 
+- title: "Learning Individual Scientific Taste with Privileged Hindsight Distillation"
+  first_public_date: "2026-10-14"
+  authors:
+    - "Hanwei Fan"
+    - "Yanqiao Wang"
+    - "Yiqi Zhu"
+    - "Xuanyu Lei"
+    - "Peng Li"
+    - "Yang Liu"
+  venue: "arXiv 预印本"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2610.19719"
+    - label: "PDF"
+      url: "https://arxiv.org/pdf/2610.19719"
+    - label: "博客"
+      url: "/zh/posts/individual-scientific-taste/"
+  summary: "通过共享维度评价、群体偏好映射和研究者个人适配，从少量成对比较反馈中学习个人科研品味。特权后见蒸馏在训练时利用后续科学证据，推断时仅使用提案阶段可见的信息。"
+
 - title: "From Meta Idea to Advanced Mathematical Discovery -- Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms"
   first_public_date: "2026-06-12"
   authors:
