@@ -1,3 +1,19 @@
+- title: "Yau's number-theoretic conjecture and sharp spectral bounds for quantum harmonic oscillators"
+  authors:
+    - "Zhiwen Liu"
+    - "Stephen S.-T. Yau"
+    - "Hao Zuo"
+  venue: "arXiv 预印本"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2610.17704"
+    - label: "PDF"
+      url: "https://arxiv.org/pdf/2610.17704"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2610.17704"
+  summary_expert: "该工作在所有不低于 3 的维数中，证明 Yau 关于实直角单纯形内正整数点计数的锐多项式上界猜想：只要计数非零，上界即成立，且等号恰在所有截距为同一整数时取得。应用包括量子谐振子的锐特征值计数上界，以及在频率比为有理数时，通过增加一个格点坐标和插值得到的一阶 Riesz 均值上界。作者说明曾使用 ChatGPT（包括通过 AIM 框架）辅助语言润色、数学表述和证明技术细节，所有 AI 辅助内容均由作者审阅核验。"
+  summary_public: "一个高维单纯形里最多能容纳多少个各坐标均为正整数的格点？这项工作解决了 Yau 关于这一计数的猜想，并用它估计量子谐振子在给定能量以下的状态数量。当各方向频率相同时，谐振子在自身能级处恰好达到这一上界。"
+
 - title: "Well-posedness of Filtering Equations in Weighted Sobolev Spaces with Unbounded System Coefficients"
   authors:
     - "Zeju Sun"

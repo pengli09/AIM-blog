@@ -1,3 +1,19 @@
+- title: "Yau's number-theoretic conjecture and sharp spectral bounds for quantum harmonic oscillators"
+  authors:
+    - "Zhiwen Liu"
+    - "Stephen S.-T. Yau"
+    - "Hao Zuo"
+  venue: "arXiv preprint"
+  links:
+    - label: "arXiv"
+      url: "https://arxiv.org/abs/2610.17704"
+    - label: "PDF"
+      url: "https://arxiv.org/pdf/2610.17704"
+    - label: "DOI"
+      url: "https://doi.org/10.48550/arXiv.2610.17704"
+  summary_expert: "Proves Yau's conjectured sharp polynomial bound for positive integer points in real right simplices in every dimension n at least 3, whenever the count is nonzero; equality holds precisely for equal integer intercepts. Applications give sharp harmonic-oscillator eigenvalue-count bounds and, for rational frequency ratios, first Riesz-mean bounds via an additional lattice coordinate and interpolation. The authors report using ChatGPT, including through AIM, for language editing, mathematical exposition, and proof details, with all AI-assisted material reviewed and verified by the authors."
+  summary_public: "How many integer grid points fit inside a higher-dimensional simplex? This work resolves Yau's conjecture on that count and uses the result to bound the number of quantum harmonic-oscillator states below a given energy. Equal-frequency oscillators attain the bounds at their energy levels."
+
 - title: "Well-posedness of Filtering Equations in Weighted Sobolev Spaces with Unbounded System Coefficients"
   authors:
     - "Zeju Sun"
