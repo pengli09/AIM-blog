@@ -1,3 +1,16 @@
+- title: "Quantitative Homogenization and Global Lipschitz Estimates for Elasticity with Periodic Rigid Inclusions"
+  authors:
+    - "Yuanhang Liu"
+    - "Yuxin Du"
+  venue: "SSRN 预印本"
+  links:
+    - label: "SSRN"
+      url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7625978"
+    - label: "DOI"
+      url: "https://doi.org/10.2139/ssrn.7625978"
+  summary_expert: "该工作研究含周期分布完全刚性夹杂的线弹性纯牵引问题。对于 Lipschitz 区域上满足相容条件的 L² 边界牵引，证明光滑化一阶双尺度展开在 H¹ 中具有 O(ε¹ᐟ²) 误差界；在文中更强的边界光滑性及 Hölder 连续牵引条件下，进一步得到关于 ε 一致的全局 Lipschitz 估计，在模去刚体运动后控制基体与夹杂内的完整梯度，包括每个刚性颗粒的转动。核心局部 Neumann 比较估计的常数不依赖于人工局部化边界所切单元中保留哪些夹杂；证明结合逐单元刚化、无散应力延拓与对偶方法，并用于边界 Campanato 迭代。作者声明，AIM 辅助探索定理表述、证明框架及部分证明开发；所有数学陈述和证明均由作者独立核验、修订并定稿。"
+  summary_public: "当弹性材料内部含有周期排列的完全刚性颗粒时，边界受力会使材料如何变形？这项工作量化了均匀化近似的误差，并在适当光滑性条件下证明，位移梯度的上界可以不依赖微观周期的大小。在固定整体刚体运动后，该上界也控制每个刚性颗粒的转动。AIM 参与数学探索与证明开发，最终数学陈述和证明由作者独立检查并定稿。"
+
 - title: "Yau's number-theoretic conjecture and sharp spectral bounds for quantum harmonic oscillators"
   authors:
     - "Zhiwen Liu"

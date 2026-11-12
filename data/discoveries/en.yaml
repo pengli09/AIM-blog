@@ -1,3 +1,16 @@
+- title: "Quantitative Homogenization and Global Lipschitz Estimates for Elasticity with Periodic Rigid Inclusions"
+  authors:
+    - "Yuanhang Liu"
+    - "Yuxin Du"
+  venue: "SSRN preprint"
+  links:
+    - label: "SSRN"
+      url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7625978"
+    - label: "DOI"
+      url: "https://doi.org/10.2139/ssrn.7625978"
+  summary_expert: "Studies the pure traction problem for linear elasticity with periodically distributed perfectly rigid inclusions. For compatible L² boundary tractions on a Lipschitz domain, it establishes an O(ε¹ᐟ²) error bound in H¹ for a smoothed first-order two-scale expansion. Under the stated stronger boundary smoothness and Hölder traction assumptions, it also proves an ε-uniform global Lipschitz estimate controlling the full gradient in both phases, including each rigid particle's rotation, after normalization modulo rigid motions. A local Neumann comparison estimate, independent of which inclusions are retained in cells cut by an artificial localization boundary, combines cellwise rigidification, divergence-free stress extensions, and duality to support a boundary Campanato iteration. The authors report using AIM to explore theorem formulations, proof frameworks, and parts of the proofs; they independently verified, revised, and finalized all mathematical statements and proofs."
+  summary_public: "How does an elastic material containing a repeating pattern of perfectly rigid particles deform under forces applied to its boundary? This work quantifies the accuracy of a homogenized approximation and, under smoothness assumptions, shows that displacement gradients remain bounded independently of the microscopic period. The bound also controls the rotation of each rigid particle after fixing the overall rigid motion. AIM assisted the mathematical exploration and proof development, with the final statements and proofs independently checked and finalized by the authors."
+
 - title: "Yau's number-theoretic conjecture and sharp spectral bounds for quantum harmonic oscillators"
   authors:
     - "Zhiwen Liu"
